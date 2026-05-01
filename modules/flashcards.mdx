@@ -1,0 +1,73 @@
+---
+title: 'Flashcards: tarjetas de memoria para el AI Act'
+description: 'Repasa los conceptos clave del Reglamento de IA con tarjetas de doble cara animadas: voltea, evalúa tu respuesta y avanza a tu ritmo.'
+
+---
+
+Las flashcards son tarjetas de estudio de doble cara integradas en cada guía de la plataforma. El anverso muestra un concepto o término clave del Reglamento de IA y, al voltear la tarjeta con una animación 3D, el reverso revela la explicación completa. Esta mecánica de recuperación activa —recordar antes de ver la respuesta— es una de las técnicas de memorización más respaldadas por la investigación educativa, y resulta especialmente útil para asentar la terminología técnica y legal del Reglamento Europeo de Inteligencia Artificial.
+
+## Cómo acceder a las flashcards
+
+<Steps>
+  <Step title="Abre una guía">
+    Desde la página de inicio, selecciona cualquier guía disponible en la sección **Guías**. Por ejemplo, [Introducción al Reglamento](/guides/intro-reglamento) o [Gestión de riesgos](/guides/gestion-riesgos).
+  </Step>
+  <Step title="Haz clic en la pestaña «Flashcards»">
+    En la parte superior de la página de guía encontrarás las pestañas de navegación del módulo. Selecciona **Flashcards** para cargar el mazo de tarjetas correspondiente a esa guía.
+  </Step>
+  <Step title="Lee el anverso de la tarjeta">
+    La tarjeta mostrará un concepto o término. Intenta formular mentalmente la definición antes de voltearla.
+  </Step>
+  <Step title="Voltea la tarjeta">
+    Haz clic sobre la tarjeta para activar la animación de giro. El reverso, con fondo verde, mostrará la explicación completa del concepto.
+  </Step>
+  <Step title="Navega entre tarjetas">
+    Usa los botones **Anterior** y **Siguiente** para moverte por el mazo. El contador central indica tu posición (p. ej. `3 / 12`).
+  </Step>
+</Steps>
+
+## Estructura de datos de una flashcard
+
+Cada tarjeta sigue la interfaz `Flashcard` definida en `lib/data/es.ts`:
+
+```typescript
+export interface Flashcard {
+  front: string; // Concepto o término mostrado en el anverso
+  back: string;  // Definición o explicación mostrada en el reverso
+}
+```
+
+Cada guía contiene su propio array `flashcards: Flashcard[]` con las tarjetas específicas para ese tema. El componente `FlashcardDeck` recibe ese array y gestiona el estado de navegación y volteo de forma interna.
+
+## Tarjetas por guía
+
+Cada guía del catálogo incluye un conjunto de flashcards diseñado para cubrir los conceptos más importantes de esa área del Reglamento. Al cambiar de guía, el mazo se reemplaza completamente con las tarjetas propias de ese módulo.
+
+<CardGroup cols={2}>
+  <Card title="Introducción al Reglamento" icon="file-contract" href="/guides/intro-reglamento">
+    Conceptos fundamentales del marco regulatorio europeo de IA.
+  </Card>
+  <Card title="Gestión de riesgos" icon="shield-halved" href="/guides/gestion-riesgos">
+    Tarjetas sobre niveles de riesgo, obligaciones y evaluaciones.
+  </Card>
+  <Card title="Transparencia" icon="eye" href="/guides/transparencia">
+    Términos clave sobre obligaciones de transparencia e información.
+  </Card>
+  <Card title="Documentación técnica" icon="file-lines" href="/guides/documentacion-tecnica">
+    Conceptos sobre requisitos de documentación para sistemas de IA.
+  </Card>
+</CardGroup>
+
+## Consejos para memorizar con eficacia
+
+<Note>
+  Voltea la tarjeta solo después de intentar recordar la respuesta por tu cuenta. El esfuerzo de recuperación, aunque no lo consigas, refuerza el aprendizaje más que leer pasivamente.
+</Note>
+
+<Note>
+  Repasa el mazo completo al menos dos veces por sesión. En la primera pasada identifica qué tarjetas te resultan difíciles; en la segunda, céntrate en ellas.
+</Note>
+
+<Note>
+  Combina las flashcards con el [Glosario](/modules/glossary) para profundizar en los términos que no recuerdas, y con el [Quiz](/modules/quiz) para comprobar si has consolidado el conocimiento.
+</Note>

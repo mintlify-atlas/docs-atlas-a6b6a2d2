@@ -1,0 +1,88 @@
+---
+title: "Guía 06: Supervisión humana en sistemas de IA"
+description: "Medidas para garantizar que las personas puedan supervisar, interpretar e intervenir en sistemas de IA de alto riesgo conforme al artículo 14 del AI Act."
+---
+
+La Guía 06 de la AESIA detalla las obligaciones del artículo 14 del Reglamento Europeo de IA en materia de supervisión humana. Esta guía es fundamental para diseñadores, proveedores y responsables del despliegue de sistemas de IA de alto riesgo: establece que los sistemas deben permitir que personas físicas puedan vigilar, corregir e interrumpir su funcionamiento de forma efectiva.
+
+## ¿Por qué es necesaria la supervisión humana?
+
+La IA no es infalible. Sus decisiones pueden tener un impacto drástico en la salud, la seguridad y los derechos fundamentales de las personas. El principal riesgo a combatir es el **sesgo de automatización**: la tendencia humana a confiar ciegamente en las decisiones del sistema algorítmico, perdiendo la capacidad de detectar errores y anomalías.
+
+<Note>
+  Esta guía aborda el **Artículo 14** del Reglamento Europeo de IA. La supervisión humana no es un requisito opcional — es una barrera de seguridad obligatoria para todos los sistemas de alto riesgo.
+</Note>
+
+## Conceptos clave
+
+<AccordionGroup>
+  <Accordion title="Sesgo de automatización">
+    Fenómeno por el que una persona asume que la máquina siempre tiene la razón, disminuyendo su capacidad crítica. La guía propone la técnica de **error forzado** para combatirlo: generar de forma controlada salidas erróneas durante las pruebas para que el supervisor mantenga su alerta.
+  </Accordion>
+  <Accordion title="Grados de autonomía: Human in/on the Loop">
+    El modelo de gobernanza debe definir explícitamente el nivel de autonomía concedido al sistema:
+
+    - **Human in Command (HIC):** El humano dirige y supervisa el impacto global del sistema.
+    - **Human in the Loop (HITL):** El sistema sugiere, pero la decisión final siempre la toma el humano.
+    - **Human on the Loop (HOTL):** El sistema decide automáticamente, pero el humano supervisa en tiempo real y puede interrumpir.
+  </Accordion>
+  <Accordion title="Interfaz Humano-Máquina (HMI)">
+    Los sistemas deben proporcionar interfaces adaptadas a distintos perfiles:
+    - **Perfiles técnicos:** Monitorización de métricas del modelo.
+    - **Usuarios de negocio / perfiles clínicos:** Lenguaje natural para la toma de decisiones.
+
+    La HMI debe permitir comprender los resultados y activar el "botón de parada" en caso de emergencia.
+  </Accordion>
+  <Accordion title="Identificación biométrica remota">
+    Requisito excepcional: para sistemas de identificación biométrica remota, **no se puede tomar ninguna acción** basada en la IA sin que al menos **dos personas físicas competentes** hayan verificado y confirmado la identificación de forma independiente.
+  </Accordion>
+</AccordionGroup>
+
+## Obligaciones del proveedor (Art. 14)
+
+<Steps>
+  <Step title="Diseñar para la vigilancia efectiva">
+    El proveedor debe integrar en el sistema, desde su diseño, las medidas técnicas que permitan la supervisión humana.
+  </Step>
+  <Step title="Definir el Modelo de Gobernanza">
+    Establecer la estructura organizativa, procedimientos, responsabilidades y plan de formación continua para las personas encargadas de vigilar el sistema.
+  </Step>
+  <Step title="Habilitar la Interfaz HMI adecuada">
+    Diseñar una interfaz adaptada a los diferentes perfiles de usuario que necesitan supervisar el sistema.
+  </Step>
+  <Step title="Proporcionar capacidad de interrupción">
+    El sistema debe incluir un mecanismo para que el supervisor pueda detenerlo de forma segura ("botón de parada") cuando detecte riesgos o anomalías.
+  </Step>
+  <Step title="Documentar en la Documentación Técnica">
+    Todos los mecanismos de vigilancia, el nivel de autonomía definido y los procedimientos del modelo de gobernanza deben estar documentados conforme al Artículo 11.
+  </Step>
+</Steps>
+
+## Flashcards representativas de esta guía
+
+| Concepto | Definición |
+|---|---|
+| Sesgo de automatización | Tendencia a confiar excesivamente en el sistema de IA, perdiendo capacidad crítica para detectar fallos. |
+| Error forzado | Técnica de generar salidas erróneas controladas para testar el criterio del supervisor humano. |
+| Human in the Loop (HITL) | El sistema sugiere, pero la decisión final siempre es tomada por un humano. |
+| Human on the Loop (HOTL) | El sistema actúa automáticamente, pero un humano puede interrumpirlo en tiempo real. |
+| Modelo de Gobernanza | Estructura organizativa con procedimientos, responsabilidades y formación para supervisar el sistema de IA. |
+
+<Tip>
+  Antes de estudiar esta guía, se recomienda revisar la **Guía 05** sobre Gestión de Riesgos para entender el contexto de riesgos que la supervisión humana debe mitigar.
+</Tip>
+
+<CardGroup cols={2}>
+  <Card title="Flashcards — Guía 06" icon="cards-blank" href="/modules/flashcards">
+    Practica los conceptos de supervisión humana con tarjetas de memoria interactivas.
+  </Card>
+  <Card title="Quiz — Guía 06" icon="circle-question" href="/modules/quiz">
+    Pon a prueba tu conocimiento del Artículo 14 con preguntas de opción múltiple.
+  </Card>
+  <Card title="Gestión de riesgos" icon="shield" href="/guides/gestion-riesgos">
+    Guía 05: cómo identificar y mitigar los riesgos que la supervisión humana debe controlar.
+  </Card>
+  <Card title="Transparencia" icon="eye" href="/guides/transparencia">
+    Guía 08: cómo comunicar el funcionamiento del sistema a quienes lo supervisan.
+  </Card>
+</CardGroup>

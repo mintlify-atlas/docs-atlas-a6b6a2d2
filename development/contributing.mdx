@@ -1,0 +1,105 @@
+---
+title: 'Cómo contribuir a Guías AESIA 4.0'
+description: 'Guía de contribución: instalación local, prerrequisitos, scripts disponibles, cómo añadir contenido e idiomas y cómo abrir issues y pull requests.'
+
+---
+
+Las contribuciones a Guías AESIA 4.0 son bienvenidas. Tanto si quieres ampliar el contenido de una guía existente, añadir soporte para un nuevo idioma, mejorar algún módulo de juego o corregir un error de interpretación normativa, esta página explica cómo poner en marcha el proyecto localmente y cómo colaborar de forma efectiva.
+
+## Prerrequisitos
+
+Antes de clonar el repositorio, asegúrate de tener instalado:
+
+- **Node.js** `>= 18.x`
+- **npm** `>= 9.x`
+
+## Instalación y puesta en marcha
+
+<Steps>
+  <Step title="Clona el repositorio">
+    Descarga el código fuente en tu máquina local:
+
+    ```bash
+    git clone https://github.com/ariaslombardero/Guias-AESIA-4.0.git
+    cd Guias-AESIA-4.0
+    ```
+  </Step>
+  <Step title="Instala las dependencias">
+    <CodeGroup>
+
+    ```bash npm
+    npm install
+    ```
+
+    ```bash yarn
+    yarn install
+    ```
+
+    </CodeGroup>
+  </Step>
+  <Step title="Inicia el servidor de desarrollo">
+    ```bash
+    npm run dev
+    ```
+
+    La aplicación estará disponible en `http://localhost:3000`.
+  </Step>
+</Steps>
+
+## Scripts disponibles
+
+| Script | Descripción |
+|--------|-------------|
+| `npm run dev` | Inicia el servidor de desarrollo con recarga en caliente |
+| `npm run build` | Genera el build de producción optimizado |
+| `npm run start` | Arranca el servidor con el build de producción generado |
+| `npm run lint` | Analiza el código con ESLint 9 |
+
+## Cómo añadir contenido a una guía
+
+El contenido de todas las guías en español está en `lib/data/es.ts`. Cada guía es un objeto que implementa la interfaz `Guide` e incluye arrays de `ContentSection`, `Flashcard`, `QuizQuestion` y `GlossaryTerm`.
+
+Para editar o ampliar el contenido de una guía:
+
+1. Abre `lib/data/es.ts`.
+2. Localiza el objeto de la guía por su propiedad `id` (por ejemplo, `"transparencia"`).
+3. Edita los arrays `flashcards`, `quiz`, `glossary` o `contentIndex` según corresponda.
+4. Verifica los cambios arrancando el servidor de desarrollo con `npm run dev`.
+
+<Note>
+  El contenido regulatorio debe reflejar con precisión los documentos oficiales de la AESIA. Si detectas un error de interpretación, abre un Issue antes de hacer la corrección para que pueda revisarse en contexto.
+</Note>
+
+## Cómo añadir un nuevo idioma
+
+El sistema multiidioma se gestiona en `lib/data/`. Existe un archivo por idioma (`es.ts`, `gl.ts`, `ca.ts`, `eu.ts`). El inglés (`en.ts`) está en desarrollo.
+
+Para añadir un nuevo idioma:
+
+1. Crea un nuevo archivo en `lib/data/` siguiendo la convención `<código>.ts` (por ejemplo, `fr.ts`).
+2. Exporta un array `guides` que implemente la interfaz `Guide[]`, traduciendo el contenido del archivo `es.ts`.
+3. Importa el nuevo array en `lib/data/index.ts` y añade un `case` en el `switch` de la función `getGuides()`.
+4. Registra el nuevo idioma en `LanguageProvider.tsx` y en el componente `LanguageSwitcher.tsx`.
+
+## Cómo abrir issues y pull requests
+
+**Issues:** abre un Issue en el repositorio de GitHub describiendo el error, la mejora o el contenido que quieres añadir. Incluye contexto suficiente (guía afectada, comportamiento esperado vs. real, capturas si procede).
+
+**Pull requests:** haz un fork del repositorio, crea una rama descriptiva (por ejemplo, `fix/glosario-transparencia` o `feat/idioma-frances`), realiza los cambios y abre un Pull Request contra la rama principal. Describe claramente qué cambia y por qué.
+
+<Tip>
+  Para cambios de contenido extensos (por ejemplo, traducir una guía completa), es recomendable abrir primero un Issue para coordinar el trabajo y evitar duplicidades.
+</Tip>
+
+## Código de conducta
+
+Este proyecto es de uso educativo y está orientado a la divulgación de las Guías Técnicas de la AESIA. Se espera que todas las contribuciones sean respetuosas, precisas desde el punto de vista normativo y coherentes con el enfoque pedagógico de la plataforma.
+
+<CardGroup cols={2}>
+  <Card title="Arquitectura del proyecto" icon="sitemap" href="/development/architecture">
+    Entiende la estructura de directorios y la capa de datos antes de contribuir.
+  </Card>
+  <Card title="Stack tecnológico" icon="layer-group" href="/development/tech-stack">
+    Consulta las versiones y dependencias del proyecto.
+  </Card>
+</CardGroup>

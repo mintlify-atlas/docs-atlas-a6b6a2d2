@@ -1,0 +1,96 @@
+---
+title: "Guía 05: Sistema de gestión de riesgos en IA"
+description: "Artículo 9 del AI Act: identificación, análisis, evaluación y mitigación de riesgos para la salud, seguridad y derechos fundamentales en sistemas de IA."
+---
+
+El Artículo 9 del Reglamento Europeo de IA establece que los proveedores de sistemas de alto riesgo deben implementar un **sistema de gestión de riesgos** que funcione durante todo el ciclo de vida del sistema, no como un trámite puntual sino como un proceso iterativo y continuo. Esta guía proporciona el marco metodológico para hacerlo: desde la definición del apetito al riesgo hasta la realización de pruebas obligatorias antes de la puesta en mercado.
+
+## Qué cubre esta guía
+
+La Guía 05 describe el marco completo para cumplir con las obligaciones del Artículo 9, incluyendo:
+
+- El concepto de **proceso iterativo continuo** y las tres dimensiones de riesgo (salud, seguridad y derechos fundamentales).
+- La determinación del **apetito al riesgo** y la matriz de probabilidad e impacto.
+- El análisis del **contexto externo e interno** del sistema, incluyendo la Carta de Derechos Fundamentales de la UE.
+- Las fases de **identificación, análisis y evaluación** de riesgos.
+- La jerarquía de **medidas de respuesta**: eliminar, mitigar, informar.
+- Los **procedimientos de prueba** obligatorios antes de la introducción en el mercado.
+- Protección especial para **menores de edad y colectivos vulnerables**.
+
+## Conceptos clave
+
+<AccordionGroup>
+  <Accordion title="Obligaciones del Artículo 9 y proceso iterativo">
+    El sistema de gestión de riesgos es un proceso planificado y ejecutado a lo largo de todo el ciclo de vida del sistema de IA de alto riesgo (HRAIS). Sus etapas son:
+
+    1. **Determinación y análisis pormenorizado** de los riesgos conocidos y previsibles para la salud, la seguridad o los derechos fundamentales.
+    2. **Estimación del uso indebido razonablemente previsible** por parte de los usuarios.
+    3. **Evaluación de riesgos emergentes** mediante los datos de vigilancia poscomercialización.
+
+    El Reglamento impone además un mandato de protección especial hacia **menores de dieciocho años y otros colectivos vulnerables**, obligando a prestar atención específica a posibles afectaciones negativas sobre estos grupos.
+  </Accordion>
+
+  <Accordion title="Apetito al riesgo y contexto del sistema">
+    El apetito al riesgo define el **nivel de riesgo que una organización está dispuesta a aceptar** en relación con la salud, seguridad y derechos fundamentales. Para cuantificarlo se utiliza una **matriz de riesgos** que cruza la probabilidad de ocurrencia de un evento adverso con su impacto o gravedad.
+
+    El análisis de contexto implica examinar los factores sociales, culturales, regulatorios y tecnológicos del entorno en que se diseñará y usará el sistema. La **Carta de los Derechos Fundamentales de la Unión Europea** es un elemento contextual indispensable: los sistemas deben respetar derechos clave como la no discriminación y la protección de datos personales.
+  </Accordion>
+
+  <Accordion title="Identificación, análisis y evaluación de riesgos">
+    El núcleo operativo del sistema se organiza en fases consecutivas:
+
+    **Identificación:** Proceso de descubrimiento, reconocimiento y documentación de los peligros. Se recomienda comenzar con un inventario de los componentes del sistema: actores (científicos de datos), datos (sin procesar, de entrenamiento, de prueba), entornos, herramientas y procesos. A partir de ahí se identifican amenazas como la discriminación por sesgos algorítmicos o la filtración de información confidencial.
+
+    **Análisis y evaluación:** Determina la criticidad asignando valores de **probabilidad de ocurrencia e impacto** a cada riesgo, calculando el **riesgo inherente** (sin medidas de control). Si el riesgo inherente supera el umbral del apetito al riesgo, se activa la necesidad de implementar medidas de control para mitigarlo.
+  </Accordion>
+
+  <Accordion title="Respuesta al riesgo y procedimientos de prueba">
+    Cuando los riesgos se declaran inaceptables, se seleccionan las opciones de tratamiento. El Reglamento establece una jerarquía de prioridad para la adopción de medidas:
+
+    1. **Eliminar o reducir** riesgos mediante diseño técnico y desarrollo (*seguridad por diseño*).
+    2. **Mitigar y controlar** aquellos que no se puedan eliminar con las medidas técnicas disponibles.
+    3. **Proporcionar información y formación** pertinente a los responsables del despliegue como último recurso.
+
+    El **riesgo residual** (el que queda tras aplicar los controles) debe comunicarse a los usuarios del sistema.
+
+    Los procedimientos de prueba son obligatorios durante el desarrollo y, en todo caso, **antes de la introducción del sistema en el mercado**. Incluyen evaluaciones en condiciones de uso real para comprobar que el sistema es coherente con su finalidad prevista.
+  </Accordion>
+</AccordionGroup>
+
+## Términos de estudio
+
+<AccordionGroup>
+  <Accordion title="Apetito al riesgo">
+    El volumen de riesgo que una organización está dispuesta a aceptar en la búsqueda de lograr su misión, en relación con los posibles impactos del sistema de IA sobre la salud, seguridad y derechos fundamentales.
+  </Accordion>
+  <Accordion title="Riesgo inherente">
+    El riesgo intrínseco de cada actividad o componente del sistema, evaluado sin tener en cuenta las medidas de control que puedan implantarse.
+  </Accordion>
+  <Accordion title="Riesgo residual">
+    El riesgo que subsiste después de haber implementado los controles y medidas de tratamiento. Debe ser informado a los responsables del despliegue.
+  </Accordion>
+  <Accordion title="Ataque de fuzzing">
+    Técnica de testeo automatizado mediante la que se introducen datos inválidos, aleatorios o inesperados a un sistema informático, utilizada para verificar la solidez y resistencia del sistema de IA frente a entradas inesperadas.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  La herramienta de Excel mencionada en los materiales de apoyo del Sandbox puede ayudarte a estructurar la matriz de riesgos y calcular el riesgo inherente de forma sistemática. Asegúrate de actualizar el registro cada vez que el sistema sufra una modificación relevante o se incorporen nuevos datos de vigilancia poscomercialización.
+</Tip>
+
+## Módulos de práctica
+
+<CardGroup cols={2}>
+  <Card title="Tarjetas de estudio" icon="rectangle-history" href="/modules/flashcards">
+    Repasa los conceptos de gestión de riesgos con tarjetas de vocabulario interactivas.
+  </Card>
+  <Card title="Cuestionario de evaluación" icon="circle-check" href="/modules/quiz">
+    Pon a prueba tus conocimientos sobre el Artículo 9 y la metodología de riesgos.
+  </Card>
+  <Card title="Supervisión humana" icon="eye" href="/guides/supervision-humana">
+    Aprende cómo los resultados de la gestión de riesgos se conectan con la supervisión humana.
+  </Card>
+  <Card title="Gestión de la calidad" icon="shield-halved" href="/guides/gestion-calidad">
+    Consulta cómo integrar el sistema de riesgos dentro del SGC requerido por el Art. 17.
+  </Card>
+</CardGroup>

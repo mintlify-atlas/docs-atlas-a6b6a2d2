@@ -1,0 +1,78 @@
+---
+title: 'Guía 15: Documentación técnica para sistemas de IA'
+description: 'Requisitos del artículo 11 y Anexo IV del AI Act: qué debe incluir la documentación técnica, cuándo elaborarla y durante cuánto tiempo conservarla.'
+---
+
+La **Guía 15 de la AESIA** detalla los requisitos del artículo 11 y el Anexo IV del Reglamento Europeo de Inteligencia Artificial para la elaboración de la documentación técnica de los sistemas de alto riesgo. La documentación técnica no es un trámite posterior a la comercialización: debe existir **antes** de que el sistema entre al mercado y mantenerse actualizada durante toda su vida útil.
+
+## Qué cubre esta guía
+
+Esta guía explica a quién obliga el artículo 11, qué debe incluirse en la documentación según el Anexo IV, cómo deben documentarse las decisiones de diseño y los compromisos técnicos (*trade-offs*), qué excepción existe para pymes y empresas emergentes, y durante cuánto tiempo debe conservarse la documentación conforme al artículo 18.
+
+<Note>
+La documentación técnica debe conservarse de forma segura y accesible durante un período mínimo de **10 años** tras la puesta en el mercado o servicio del sistema, conforme al artículo 18 del Reglamento.
+</Note>
+
+## Conceptos clave
+
+### Obligaciones del artículo 11
+
+El artículo 11 obliga a los proveedores a elaborar la documentación técnica **antes de la introducción en el mercado o puesta en servicio**, y a mantenerla constantemente actualizada. Su propósito es doble: demostrar que el sistema cumple con los requisitos del Capítulo III del Reglamento, y permitir a autoridades y organismos notificados evaluar la conformidad.
+
+Las **pymes y empresas emergentes** pueden beneficiarse de un formulario simplificado de documentación técnica proporcionado por la Comisión Europea, lo que reduce la carga sin eliminar la obligación.
+
+### Estructura mínima según el Anexo IV
+
+El Anexo IV establece el contenido mínimo obligatorio de la documentación técnica en tres bloques principales:
+
+1. **Descripción general del sistema:** Finalidad prevista, nombre del proveedor y versión, interacción con hardware y software, formas de comercialización (API, SaaS, *on-premise*) e instrucciones de uso. Si el sistema es componente de hardware, debe incluir fotografías o ilustraciones de características exteriores y configuración interna.
+
+2. **Elementos y procesos de desarrollo:** Metodología y especificaciones de diseño (algoritmos, parámetros a optimizar, *trade-offs* adoptados), arquitectura del sistema, fichas técnicas de datos (origen, alcance, etiquetado, depuración) y medidas de ciberseguridad.
+
+3. **Gestión de riesgos y seguimiento:** Resultados no deseados previsibles (artículo 9), métricas de precisión y rendimiento (artículo 15), plan de vigilancia poscomercialización (artículo 72), medidas de supervisión humana y copia de la declaración UE de conformidad.
+
+### Documentar los trade-offs
+
+Cuando el proveedor adopta una decisión de compensación técnica (por ejemplo, ceder levemente en precisión para reducir sesgos), debe documentar: la motivación de la decisión, la descripción funcional y técnica del compromiso adoptado y sus consecuencias en relación con la finalidad prevista del sistema. Omitir estos compromisos invalida la trazabilidad técnica del sistema.
+
+### Conservación de la documentación (artículo 18)
+
+La documentación técnica, junto con el sistema de gestión de la calidad, las aprobaciones y la declaración UE de conformidad, debe conservarse durante al menos 10 años. Las entidades financieras pueden integrarla en la documentación ya conservada en virtud del Derecho de la Unión en materia de servicios financieros.
+
+## Términos de referencia
+
+<AccordionGroup>
+  <Accordion title="Documentación técnica">
+    Conjunto de información estructurada y comprensible sobre el desarrollo, funcionamiento y características de un sistema de IA de alto riesgo, elaborada antes de su comercialización para demostrar la conformidad regulatoria.
+  </Accordion>
+  <Accordion title="Anexo IV">
+    Sección del Reglamento Europeo de IA que enumera los requisitos y el contenido mínimo obligatorio que debe incluir la documentación técnica.
+  </Accordion>
+  <Accordion title="Compensación técnica (Trade-off)">
+    Decisión de diseño documentada donde se asume el sacrificio parcial de un parámetro (por ejemplo, precisión) en favor de mejorar otro requisito clave (por ejemplo, explicabilidad o reducción de sesgo).
+  </Accordion>
+  <Accordion title="Declaración UE de conformidad">
+    Documento legal que emite el proveedor asumiendo la responsabilidad formal de que el sistema cumple con todos los requisitos del Reglamento Europeo de IA. Debe adjuntarse en la documentación técnica.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+Al estudiar la Guía 15, presta especial atención al Anexo IV y a los tres bloques de la documentación mínima. El quiz pregunta con frecuencia qué información concreta pertenece a cada bloque. También es habitual preguntar por el plazo de conservación de 10 años.
+</Tip>
+
+## Módulos de aprendizaje
+
+<CardGroup cols={2}>
+  <Card title="Flashcards de documentación técnica" icon="rectangle-history" href="/modules/flashcards">
+    Repasa el artículo 11, el Anexo IV, el plazo de conservación de 10 años y los bloques de la documentación mínima.
+  </Card>
+  <Card title="Quiz interactivo" icon="circle-question" href="/modules/quiz">
+    Pon a prueba tu conocimiento sobre la estructura del Anexo IV, los trade-offs y las excepciones para pymes.
+  </Card>
+  <Card title="Glosario de documentación técnica" icon="book" href="/modules/glossary">
+    Consulta las definiciones de documentación técnica, finalidad prevista, fichas técnicas de datos, trade-off y declaración UE de conformidad.
+  </Card>
+  <Card title="Guía relacionada: checklist" icon="circle-check" href="/guides/checklist">
+    La Guía 16 incluye una herramienta de diagnóstico para verificar el grado de cumplimiento de la documentación técnica junto con el resto de los 12 requisitos.
+  </Card>
+</CardGroup>

@@ -1,0 +1,96 @@
+---
+title: "Guía 03: Evaluación de conformidad en IA"
+description: "Cómo demostrar que un sistema de IA de alto riesgo cumple el Reglamento Europeo: control interno, organismos notificados, marcado CE y declaración UE."
+---
+
+La **evaluación de conformidad** es la puerta de entrada al mercado para cualquier sistema de IA de alto riesgo. Antes de comercializar o poner en servicio un sistema de este tipo, el proveedor debe demostrar formalmente que cumple los requisitos del Título III, Capítulo 2 del Reglamento Europeo de IA (Art. 43). Esta guía explica cómo hacerlo, qué vía elegir y qué documentos hay que preparar.
+
+## Qué cubre esta guía
+
+La Guía 03 orienta a proveedores en el proceso completo de evaluación de conformidad, desde la elección del procedimiento adecuado hasta la obtención del marcado CE. Concretamente aborda:
+
+- La diferencia entre evaluación por **control interno** (Anexo VI) y evaluación con **organismo notificado** (Anexo VII).
+- Cuándo es obligatoria la intervención de un tercero independiente.
+- El papel de las **normas armonizadas** y las **especificaciones comunes** como vía de presunción de conformidad.
+- La **Declaración UE de conformidad** y sus requisitos de conservación.
+- El **marcado CE** y cómo fijarlo correctamente.
+
+## Conceptos clave
+
+<AccordionGroup>
+  <Accordion title="1. Introducción a la evaluación de la conformidad">
+    El Reglamento define la evaluación de la conformidad como el proceso por el que se demuestra si se han cumplido los requisitos del Título III, Capítulo 2 para sistemas de IA de alto riesgo. Su propósito es triple: garantizar que los sistemas en el mercado no representen riesgos inaceptables, proteger intereses públicos y respetar los derechos fundamentales de las personas.
+
+    Existen **dos vías principales**, cuya elección depende del tipo de sistema y de si se han aplicado normas armonizadas:
+    1. **Control interno:** El proveedor evalúa su propio sistema sin intervención de terceros.
+    2. **Organismo notificado:** Un tercero independiente evalúa el sistema de gestión de la calidad y la documentación técnica.
+  </Accordion>
+
+  <Accordion title="2. Procedimiento de control interno (Anexo VI)">
+    El control interno permite al proveedor autoevaluar su sistema sin la intervención de un organismo notificado. Es aplicable a los sistemas del Anexo III (puntos 2 a 8) o a sistemas de identificación biométrica cuando se han aplicado íntegramente las normas armonizadas.
+
+    El proceso se estructura en tres verificaciones documentales:
+    1. **Sistema de gestión de la calidad (SGC):** Verificar el cumplimiento del Art. 17.
+    2. **Documentación técnica:** Comprobar que evidencia la conformidad con los Arts. 8 a 15.
+    3. **Diseño y desarrollo:** Asegurar coherencia con la documentación técnica y con el sistema de vigilancia poscomercialización (Art. 72).
+
+    Las pymes y empresas emergentes pueden beneficiarse de un formulario simplificado elaborado por la Comisión Europea para presentar su documentación técnica.
+  </Accordion>
+
+  <Accordion title="3. Evaluación con organismo notificado (Anexo VII)">
+    La intervención de un organismo notificado es obligatoria para sistemas de identificación biométrica remota (Anexo III, punto 1) o cuando el proveedor no ha aplicado normas armonizadas de forma íntegra.
+
+    El organismo independiente realiza dos evaluaciones clave:
+    1. **Evaluación del SGC:** Analiza la solicitud, audita el sistema y puede realizar revisiones periódicas sin previo aviso.
+    2. **Control de la documentación técnica:** Puede exigir pruebas adicionales, acceso a los conjuntos de datos mediante APIs remotas e incluso acceso al modelo entrenado.
+
+    Si el sistema supera el examen, el organismo expide un **certificado de la Unión de evaluación de la documentación técnica**, documento de validez temporal que acredita la conformidad del producto.
+  </Accordion>
+
+  <Accordion title="4. Normas armonizadas, declaración UE y marcado CE">
+    El proveedor dispone de varios instrumentos para acreditar la conformidad:
+
+    - **Normas armonizadas (Art. 40):** Su aplicación otorga presunción de conformidad con los requisitos del Reglamento.
+    - **Especificaciones comunes (Art. 41):** Elaboradas por la Comisión cuando no existen normas armonizadas suficientes; su uso tiene el mismo efecto.
+    - **Declaración UE de conformidad (Art. 47):** Documento escrito en el que el proveedor asume la responsabilidad legal del cumplimiento. Debe conservarse durante al menos diez años.
+    - **Marcado CE (Art. 48):** Símbolo visible, legible e indeleble que certifica la conformidad con la legislación de armonización de la UE. Si el sistema es software puro, se coloca en los documentos adjuntos o en la interfaz.
+  </Accordion>
+</AccordionGroup>
+
+## Términos de estudio
+
+<AccordionGroup>
+  <Accordion title="Evaluación de la conformidad">
+    Proceso técnico y documental mediante el cual se demuestra si un sistema de IA de alto riesgo cumple los requisitos obligatorios del Título III, Capítulo 2 del Reglamento.
+  </Accordion>
+  <Accordion title="Organismo Notificado">
+    Entidad independiente designada y acreditada por un Estado miembro, encargada de certificar los sistemas de IA de alto riesgo según el Anexo VII. Puede auditar el SGC y solicitar acceso a los datos de entrenamiento.
+  </Accordion>
+  <Accordion title="Marcado CE">
+    Distintivo oficial visible, legible e indeleble que certifica que el sistema cumple con la legislación de armonización de la Unión Europea. Su colocación es el hito final del proceso de evaluación.
+  </Accordion>
+  <Accordion title="Modificación sustancial">
+    Cambio relevante en el sistema de IA que afecta a su conformidad con el Reglamento, requiriendo iniciar un nuevo procedimiento de evaluación de la conformidad desde el inicio.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  Antes de decidir la vía de evaluación, comprueba si tu sistema está en el Anexo III, punto 1 (identificación biométrica remota). En ese caso, la intervención de un organismo notificado es obligatoria a menos que hayas aplicado íntegramente las normas armonizadas publicadas en el Diario Oficial de la UE.
+</Tip>
+
+## Módulos de práctica
+
+<CardGroup cols={2}>
+  <Card title="Tarjetas de estudio" icon="rectangle-history" href="/modules/flashcards">
+    Repasa los conceptos de esta guía con tarjetas de vocabulario interactivas.
+  </Card>
+  <Card title="Cuestionario de evaluación" icon="circle-check" href="/modules/quiz">
+    Pon a prueba tus conocimientos sobre el proceso de evaluación de conformidad.
+  </Card>
+  <Card title="Glosario oficial" icon="book-open" href="/modules/glossary">
+    Consulta las definiciones exactas de los términos regulatorios de esta guía.
+  </Card>
+  <Card title="Visión general de guías" icon="map" href="/guides/overview">
+    Explora las demás guías técnicas del Reglamento Europeo de IA.
+  </Card>
+</CardGroup>

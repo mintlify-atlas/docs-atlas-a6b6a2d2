@@ -1,0 +1,87 @@
+---
+title: 'Guía 10: Solidez técnica en sistemas de IA de alto riesgo'
+description: 'Artículo 15: propiedades deseables de solidez, verificación y validación, paradigma fail-safe, redundancia y medidas frente al olvido catastrófico.'
+---
+
+La **Guía 10 de la AESIA** desarrolla los requisitos de solidez (robustez) técnica establecidos en el artículo 15 del Reglamento Europeo de Inteligencia Artificial. Un sistema de IA de alto riesgo es sólido cuando está preparado para minimizar y prevenir comportamientos perjudiciales, detectar cuándo opera fuera de su dominio establecido y actuar de forma segura ante condiciones imprevistas.
+
+## Qué cubre esta guía
+
+Esta guía explica cómo diseñar sistemas resistentes a errores, fallos o inconsistencias del entorno operativo. Cubre las cinco propiedades deseables de la solidez, la distinción entre verificación y validación, las estrategias de redundancia técnica y fallo seguro, y los desafíos específicos de los sistemas que continúan aprendiendo tras su comercialización, como el olvido catastrófico y la deriva de datos.
+
+<Note>
+El artículo 15.4 del Reglamento establece que la solidez técnica debe garantizar la resistencia frente a errores, fallos o incoherencias del entorno operativo, tanto de origen interno como de la interacción con personas y otros sistemas.
+</Note>
+
+## Conceptos clave
+
+### Las cinco propiedades deseables
+
+El artículo 15 y la Guía 10 identifican cinco propiedades que todo sistema sólido debe contemplar en su diseño:
+
+1. **Fiabilidad:** Consistencia entre los valores estimados inicialmente y las estimaciones subsecuentes.
+2. **Estabilidad:** Insensibilidad a cambios irrelevantes en las características de entrada.
+3. **Sensibilidad:** Reacción adecuada y predecible a cambios relevantes en los datos de entrada.
+4. **Relevancia:** Las respuestas deben pertenecer de manera efectiva al dominio del problema.
+5. **Alcanzabilidad:** Define y delimita las fronteras de operación segura del sistema.
+
+La solidez puede evaluarse desde dos perspectivas: **solidez local** (comportamiento frente a pequeñas perturbaciones cerca de una entrada específica) y **solidez global** (garantías de comportamiento en todos los rangos de entrada del dominio esperado).
+
+### Verificación y validación (V&V)
+
+La distinción entre verificación y validación es un punto crítico de la Guía 10:
+
+- **Verificación:** Comprueba matemática o analíticamente que el sistema cumple las especificaciones de diseño sin ejecutarlo con datos reales. Detecta errores de forma temprana.
+- **Validación:** Requiere ejecutar el sistema con datos reales (conjuntos de prueba y validación) para aportar evidencia objetiva sobre su funcionamiento conforme a su finalidad prevista.
+
+### Paradigma de fallo seguro (Fail-safe) y redundancia
+
+El artículo 15.4 exige diseñar sistemas que actúen ante una eventual degradación. Si el sistema detecta alta incertidumbre o que opera fuera de sus parámetros garantizados, debe contar con mecanismos preprogramados para interrumpir su funcionamiento de forma segura. Este es el paradigma de **fallo seguro** (*fail-safe*).
+
+La **redundancia técnica** es igualmente indispensable: copias de seguridad automáticas de datos, modelos entrenados y registros de ejecución, así como sistemas paralelos no basados en IA (reglas heurísticas o árboles deterministas) que puedan tomar el control si el modelo principal falla.
+
+### Sistemas de aprendizaje continuo
+
+Los sistemas que continúan aprendiendo tras ser comercializados presentan riesgos adicionales:
+
+- **Olvido catastrófico:** El modelo pierde la capacidad de realizar tareas para las que fue entrenado inicialmente al absorber nuevos datos. Se mitiga con técnicas como Elastic Weight Consolidation (EWC), Piggyback y Experience Replay.
+- **Deriva de datos (*Data Drift*):** La distribución estadística de los datos reales cambia respecto a los datos de entrenamiento. Se aborda con técnicas de adaptación de dominio (*Domain Adaptation*).
+- **Deriva de conceptos (*Concept Drift*):** Evoluciona la relación entre las entradas y la predicción esperada.
+
+## Términos de referencia
+
+<AccordionGroup>
+  <Accordion title="Fallo seguro (Fail-safe)">
+    Capacidad del sistema para detectar cuándo no puede funcionar de manera sólida y, en respuesta, detener su operación de forma controlada o transferir el control a un sistema redundante.
+  </Accordion>
+  <Accordion title="Olvido catastrófico (Catastrophic Forgetting)">
+    Degradación de un modelo de IA en la que pierde la capacidad de realizar tareas para las que fue entrenado al aprender de información nueva.
+  </Accordion>
+  <Accordion title="Solidez local vs. global">
+    La solidez local verifica el comportamiento ante pequeñas perturbaciones cerca de una entrada concreta. La solidez global garantiza el comportamiento seguro en todos los rangos de entrada del dominio esperado.
+  </Accordion>
+  <Accordion title="Tarjeta del modelo (Model Card)">
+    Documento estandarizado que detalla el rendimiento, las métricas de precisión y solidez, las limitaciones operativas y los umbrales de decisión de un sistema de IA.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+Presta atención a la diferencia entre verificación y validación: es uno de los conceptos que más aparece en el quiz de la Guía 10. Recuerda que la validación siempre requiere datos reales.
+</Tip>
+
+## Módulos de aprendizaje
+
+<CardGroup cols={2}>
+  <Card title="Flashcards de solidez" icon="rectangle-history" href="/modules/flashcards">
+    Repasa las propiedades deseables, el fallo seguro, el olvido catastrófico y la deriva de datos con tarjetas de memoria.
+  </Card>
+  <Card title="Quiz interactivo" icon="circle-question" href="/modules/quiz">
+    Comprueba tus conocimientos sobre V&V, redundancia técnica y solidez en sistemas de aprendizaje continuo.
+  </Card>
+  <Card title="Glosario de solidez" icon="book" href="/modules/glossary">
+    Consulta las definiciones oficiales de AUROC, desplazamiento del dominio, destilación del conocimiento y más términos de la Guía 10.
+  </Card>
+  <Card title="Guía relacionada: ciberseguridad" icon="shield-halved" href="/guides/ciberseguridad">
+    La ciberseguridad complementa la solidez: los ataques adversarios pueden comprometer directamente el rendimiento del modelo.
+  </Card>
+</CardGroup>

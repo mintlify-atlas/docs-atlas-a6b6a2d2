@@ -1,0 +1,123 @@
+---
+title: 'Arquitectura del proyecto Guías AESIA 4.0'
+description: 'Estructura de directorios, rutas del App Router, capa de datos TypeScript, sistema i18n y componentes clave de la plataforma Guías AESIA 4.0.'
+
+---
+
+Guías AESIA 4.0 está construida sobre **Next.js 16 con App Router**, siguiendo una separación clara entre rutas (`app/`), componentes reutilizables (`components/`), lógica de negocio y datos (`lib/`) y recursos estáticos (`public/`). Esta organización permite escalar las 16 guías técnicas y los módulos de juego de forma independiente, manteniendo la coherencia visual y la tipología estricta con TypeScript 5.
+
+## Estructura de directorios
+
+```text
+aesia-course/
+├── app/                        # Rutas de Next.js (App Router)
+│   ├── page.tsx                # Página principal con HeroSection y catálogo de guías
+│   ├── layout.tsx              # Layout global con providers de idioma
+│   ├── globals.css             # Estilos globales y variables de diseño
+│   ├── guides/
+│   │   └── [id]/               # Ruta dinámica para cada guía
+│   │       ├── page.tsx        # Vista principal de la guía (contenido + componentes)
+│   │       ├── flashcards/     # Módulo de flashcards de la guía
+│   │       ├── quiz/           # Módulo de cuestionario de la guía
+│   │       └── glossary/       # Glosario de términos de la guía
+│   ├── aventura/               # Juego de aventura de texto
+│   ├── escape-room/            # Juego tipo Escape Room temático
+│   └── pasapalabra/            # Juego tipo Pasapalabra con terminología AESIA
+│
+├── components/                 # Componentes React reutilizables
+│   ├── HeroSection.tsx         # Cabecera principal animada
+│   ├── HeroScene.tsx           # Escena 3D/visual del héroe
+│   ├── GuideCard.tsx           # Tarjeta de cada guía en el catálogo
+│   ├── GuideContent.tsx        # Renderizado del contenido de una guía
+│   ├── GuideDetails.tsx        # Vista detallada con navegación por secciones
+│   ├── FlashcardDeck.tsx       # Mazo de flashcards interactivo
+│   ├── QuizModule.tsx          # Motor de cuestionario con puntuación
+│   ├── GuideGlossary.tsx       # Glosario visual con búsqueda
+│   ├── TrainingZone.tsx        # Panel gamificado de entrenamiento
+│   ├── EscapeRoomGame.tsx      # Lógica del juego Escape Room
+│   ├── PasapalabraGame.tsx     # Lógica del juego Pasapalabra
+│   ├── LanguageProvider.tsx    # Contexto de internacionalización (i18n)
+│   ├── LanguageSwitcher.tsx    # Selector de idioma en la navbar
+│   ├── Navbar.tsx              # Barra de navegación principal
+│   ├── RiskClassifier.tsx      # Visualizador interactivo de clasificación de riesgos
+│   ├── RiskMatrix.tsx          # Matriz de riesgos visual
+│   ├── ConformityRoadmap.tsx   # Hoja de ruta de conformidad interactiva
+│   └── ...más componentes visuales temáticos
+│
+├── lib/                        # Lógica de negocio y datos
+│   ├── data/
+│   │   ├── es.ts               # Datos completos de las guías en español
+│   │   ├── en.ts               # Datos en inglés (en desarrollo)
+│   │   ├── gl.ts               # Datos en gallego
+│   │   ├── eu.ts               # Datos en euskera
+│   │   ├── ca.ts               # Datos en catalán
+│   │   └── index.ts            # Exportaciones y función getGuides()
+│   ├── i18n/                   # Traducciones de la interfaz de usuario
+│   ├── aventuraData.ts         # Datos del juego de aventura
+│   ├── escapeRoomData.ts       # Datos del juego Escape Room
+│   └── pasapalabraData.ts      # Datos del juego Pasapalabra
+│
+└── public/                     # Recursos estáticos (imágenes, iconos)
+```
+
+## Rutas principales
+
+La aplicación expone las siguientes rutas a través del App Router:
+
+| Ruta | Descripción |
+|------|-------------|
+| `/` | Página principal con `HeroSection` y catálogo de guías |
+| `/guides/[id]` | Vista de contenido de una guía concreta |
+| `/guides/[id]/flashcards` | Módulo de flashcards de la guía |
+| `/guides/[id]/quiz` | Cuestionario interactivo de la guía |
+| `/guides/[id]/glossary` | Glosario de términos de la guía |
+| `/escape-room` | Juego de Escape Room temático |
+| `/pasapalabra` | Juego Rosco RIA (Pasapalabra) |
+| `/aventura` | Juego de rol narrativo IA Aventura |
+
+## Capa de datos
+
+Todos los datos de contenido residen en `lib/data/`. Los tipos TypeScript se exportan desde `lib/data/index.ts` y son compartidos por todos los módulos:
+
+| Interfaz | Descripción |
+|----------|-------------|
+| `Guide` | Estructura completa de una guía técnica |
+| `Flashcard` | Tarjeta de memoria con pregunta y respuesta |
+| `QuizQuestion` | Pregunta de opción múltiple con explicación |
+| `GlossaryTerm` | Término del glosario con definición |
+| `ContentSection` | Sección de contenido de una guía |
+
+La función `getGuides(lang)` de `lib/data/index.ts` es el punto de entrada principal: devuelve el array de guías para el idioma solicitado (`es`, `gl`, `ca`, `eu`) con `es` como fallback por defecto.
+
+## Sistema i18n
+
+El soporte multiidioma se implementa con dos capas independientes:
+
+- **`LanguageProvider`** (`components/LanguageProvider.tsx`) — contexto React que expone el idioma activo y el diccionario de cadenas de interfaz. Envuelve toda la aplicación desde `app/layout.tsx`.
+- **`lib/data/`** — archivos de datos separados por idioma (`es.ts`, `gl.ts`, `ca.ts`, `eu.ts`). El inglés (`en.ts`) está en desarrollo.
+- **`lib/i18n/`** — diccionarios de traducciones de los textos de la interfaz de usuario.
+
+## Sistema de temas
+
+El soporte claro/oscuro se gestiona mediante:
+
+- **`ThemeProvider`** (`components/ThemeProvider.tsx`) — contexto que almacena el tema activo en `localStorage` y lo aplica como clase CSS al `<html>`.
+- **Script de inicialización inline** en `app/layout.tsx` — se ejecuta antes del primer render para leer `localStorage` y aplicar la clase de tema, evitando el parpadeo (flash) en la carga inicial.
+- **`ThemeToggle`** — componente de alternancia integrado en la `Navbar`.
+
+## Componentes clave
+
+<CardGroup cols={2}>
+  <Card title="HeroScene" icon="cube" href="/development/architecture">
+    Escena 3D construida con Three.js y React Three Fiber. Se muestra en la página principal como elemento visual de impacto.
+  </Card>
+  <Card title="FlashcardDeck" icon="cards" href="/modules/flashcards">
+    Motor de flashcards con animación de giro (Framer Motion), contador de aciertos y navegación entre tarjetas.
+  </Card>
+  <Card title="QuizModule" icon="circle-question" href="/modules/quiz">
+    Motor de cuestionario con validación de respuestas, retroalimentación inmediata y puntuación final.
+  </Card>
+  <Card title="GuideGlossary" icon="book-open" href="/modules/glossary">
+    Glosario con búsqueda en tiempo real y ordenación alfabética de los términos técnicos de cada guía.
+  </Card>
+</CardGroup>

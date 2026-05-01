@@ -1,0 +1,95 @@
+---
+title: "Guía 04: Sistema de gestión de la calidad en IA"
+description: "Artículo 17 del AI Act: cómo implementar un Sistema de Gestión de la Calidad para IA de alto riesgo, con criterios de proporcionalidad para pymes."
+---
+
+El **Sistema de Gestión de la Calidad (SGC)** es el pilar organizativo que sustenta el cumplimiento del Reglamento Europeo de IA para los proveedores de sistemas de alto riesgo. No se trata de un concepto abstracto: el Artículo 17 exige que el SGC esté formalizado en documentación escrita, abarque todo el ciclo de vida del sistema y defina responsabilidades claras para cada persona involucrada. Esta guía explica qué debe contener ese SGC y cómo construirlo de forma proporcional al tamaño de la organización.
+
+## Qué cubre esta guía
+
+La Guía 04 establece las pautas para implementar el SGC exigido por el Artículo 17 para proveedores de sistemas de IA de alto riesgo. Los temas principales son:
+
+- Obligaciones generales del SGC y su formalización en documentación escrita.
+- Control técnico del diseño y desarrollo: **ciberseguridad**, **precisión** y **solidez**.
+- Gobernanza de datos, gestión de riesgos y vigilancia poscomercialización dentro del SGC.
+- Marco de rendición de cuentas y gestión de recursos humanos y técnicos.
+- Criterios de **proporcionalidad** para pymes y microempresas.
+- Integración del SGC con sistemas sectoriales ya existentes (p. ej., entidades financieras).
+
+## Conceptos clave
+
+<AccordionGroup>
+  <Accordion title="Obligaciones generales del SGC (Artículo 17)">
+    El Artículo 17 establece que todos los proveedores de sistemas de IA de alto riesgo deben implementar un SGC robusto y documentado. No es opcional: debe consignarse en **documentación escrita** que recoja políticas, procedimientos e instrucciones aplicables durante todo el ciclo de vida del producto.
+
+    El SGC debe incluir una estrategia integral de cumplimiento normativo, la ejecución de los procedimientos de evaluación de la conformidad y la gestión de modificaciones. Cualquier cambio en el software, firmware o datos debe distinguirse entre cambios sustanciales, no sustanciales y predefinidos, sometiéndose a los mismos controles de calidad.
+  </Accordion>
+
+  <Accordion title="Diseño, desarrollo y tres pilares técnicos">
+    El proveedor es el principal responsable de establecer procedimientos sistemáticos durante las fases de diseño y desarrollo. El SGC debe articularse en torno a tres pilares:
+
+    1. **Ciberseguridad:** Integrar la seguridad desde la concepción (*seguridad por diseño*). Incluir perfiles críticos como el Delegado de Protección de Datos. Aplicar análisis SAST/DAST, pruebas de penetración y dinámicas de red/blue teaming.
+    2. **Precisión:** Establecer métricas acordes a la finalidad prevista. Verificar funciones objetivo y evitar el sobreaprendizaje (*overfitting*). Contrastar resultados con modelos base (*baseline models*).
+    3. **Solidez:** Definir las características de fiabilidad, estabilidad y alcanzabilidad. Aplicar un procedimiento iterativo de verificación (sin datos reales) y validación (con datos reales), soportado por prácticas de ML-Ops.
+  </Accordion>
+
+  <Accordion title="Datos, riesgos y vigilancia poscomercialización">
+    El SGC debe incorporar políticas y procedimientos explícitos para tres fases críticas:
+
+    - **Gobernanza de datos (Art. 10):** Documentar las operaciones de adquisición, etiquetado, depuración y agregación. Detectar y corregir sesgos que puedan derivar en discriminaciones prohibidas. Aplicar principios de minimización y cumplir el RGPD.
+    - **Gestión de riesgos (Art. 9):** Integrar el proceso de identificación, análisis y evaluación de riesgos de forma continua e iterativa durante todo el ciclo de vida.
+    - **Vigilancia poscomercialización (Art. 72):** Establecer herramientas para recolectar proactivamente datos sobre el rendimiento del sistema en entornos reales, detectando desviaciones no evidentes en pruebas de laboratorio.
+
+    Vinculado a la vigilancia, el SGC debe definir vías rápidas para investigar y comunicar a las Autoridades Nacionales Competentes cualquier incidente grave (Art. 73).
+  </Accordion>
+
+  <Accordion title="Gobernanza, recursos y rendición de cuentas">
+    El SGC se sustenta en un marco organizativo con cuatro elementos de gestión de recursos (Art. 17.1l):
+    1. **Personas:** Perfiles capacitados para operar y supervisar los sistemas.
+    2. **Infraestructura:** Recursos tecnológicos adecuados para pruebas y despliegue.
+    3. **Ambiente de operación:** Entornos de prueba estables y aislados.
+    4. **Conocimientos:** Actualización continua del *know-how* regulatorio.
+
+    El marco de rendición de cuentas (Art. 17.1m) define inequívocamente las responsabilidades: el Perfil Legal se ocupa de la estrategia normativa, el CDO de la gobernanza de datos, el equipo de QA de la validación y el CRO de la gestión de riesgos.
+
+    El Reglamento contempla la **proporcionalidad** (Art. 17.2): las exigencias se adaptan al tamaño del proveedor, reduciendo cargas administrativas para pymes y microempresas sin comprometer el nivel de protección. Las entidades financieras con sistemas de gestión sectoriales existentes pueden integrar los requisitos del AI Act en ellos.
+  </Accordion>
+</AccordionGroup>
+
+## Términos de estudio
+
+<AccordionGroup>
+  <Accordion title="Sistema de Gestión de la Calidad (SGC)">
+    Conjunto documentado de políticas, procedimientos e instrucciones diseñado para garantizar que una organización y sus sistemas de IA cumplen el Reglamento Europeo, asegurando la salud, seguridad y derechos fundamentales.
+  </Accordion>
+  <Accordion title="ML-Ops (Machine Learning Operations)">
+    Prácticas conjuntas de desarrollo y operaciones para el despliegue y mantenimiento de modelos de Machine Learning en producción de manera confiable y eficiente. Mantienen la trazabilidad del ciclo de vida del modelo.
+  </Accordion>
+  <Accordion title="Sobreaprendizaje (Overfitting)">
+    Problema de modelado donde la IA se ajusta demasiado a los datos de entrenamiento y pierde la capacidad de generalizar o mantener su precisión con datos nuevos y reales.
+  </Accordion>
+  <Accordion title="Proporcionalidad">
+    Principio que permite adaptar la carga burocrática y documental del SGC al tamaño y capacidad de la empresa, manteniendo la rigurosidad técnica exigida por el Reglamento.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  Si ya dispones de un sistema de gestión certificado bajo ISO 9001 o una normativa sectorial europea, puedes integrarlo con los requisitos del AI Act en lugar de construir un SGC paralelo desde cero. Esta integración reduce la carga administrativa significativamente.
+</Tip>
+
+## Módulos de práctica
+
+<CardGroup cols={2}>
+  <Card title="Tarjetas de estudio" icon="rectangle-history" href="/modules/flashcards">
+    Repasa los conceptos del SGC con tarjetas de vocabulario interactivas.
+  </Card>
+  <Card title="Cuestionario de evaluación" icon="circle-check" href="/modules/quiz">
+    Pon a prueba tus conocimientos sobre el Artículo 17 y sus implicaciones prácticas.
+  </Card>
+  <Card title="Gestión de riesgos" icon="shield-halved" href="/guides/gestion-riesgos">
+    Profundiza en el sistema de gestión de riesgos requerido por el Artículo 9.
+  </Card>
+  <Card title="Evaluación de conformidad" icon="badge-check" href="/guides/evaluacion-conformidad">
+    Aprende a demostrar formalmente que tu SGC cumple los requisitos del Reglamento.
+  </Card>
+</CardGroup>

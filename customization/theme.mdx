@@ -1,0 +1,77 @@
+---
+title: 'Tema visual: modo claro y oscuro en Guías AESIA'
+description: 'Guías AESIA soporta modo claro y oscuro con efectos glassmorphism. Aprende a cambiar el tema y cómo persiste tu preferencia entre sesiones.'
+
+---
+
+Guías AESIA está diseñada para ser cómoda en cualquier entorno de trabajo. La plataforma incorpora un sistema de temas que permite alternar entre modo claro y modo oscuro con un solo clic. Ambos modos están optimizados con variables de color independientes y efectos de glassmorphism que mantienen la coherencia visual de la interfaz en cualquier condición de iluminación. Tu preferencia queda guardada entre sesiones, por lo que no necesitas volver a configurarla cada vez que accedas.
+
+## Cómo cambiar el tema
+
+El interruptor de tema está integrado en la barra de navegación superior a través del componente `ThemeToggle`.
+
+<Steps>
+  <Step title="Localiza el botón de tema en la barra de navegación">
+    Busca el botón circular con icono de sol o luna en la esquina derecha de la barra superior, junto al selector de idioma. Cuando el modo oscuro está activo, muestra un icono de sol; en modo claro, muestra una luna.
+  </Step>
+  <Step title="Haz clic para alternar">
+    Al pulsar el botón, el tema cambia de inmediato. El icono rota con una animación suave de 200 ms para confirmar el cambio visualmente.
+  </Step>
+  <Step title="La preferencia se guarda automáticamente">
+    La selección se almacena en `localStorage`. La próxima vez que abras la plataforma, el tema elegido se restaurará sin intervención.
+  </Step>
+</Steps>
+
+<Note>
+El tema predeterminado es el **modo oscuro**. Si accedes desde un dispositivo o navegador nuevo donde no hay preferencia guardada, la plataforma arrancará en modo oscuro.
+</Note>
+
+## Diferencias visuales entre modos
+
+<Tabs>
+  <Tab title="Modo oscuro">
+    El modo oscuro es el estado predeterminado de la plataforma. Los fondos utilizan tonos `slate-800` y `slate-900`, con superficies de tarjeta que combinan semitransparencias y desenfoque (`backdrop-blur`) para el efecto glassmorphism. Los bordes son sutiles en `slate-700`, y el texto principal adopta tonos claros sobre fondo oscuro. Las animaciones y los reflejos de luz en los elementos interactivos aportan profundidad sin saturar la pantalla.
+  </Tab>
+  <Tab title="Modo claro">
+    En modo claro los fondos cambian a `white/90` y `slate-100`, manteniendo el mismo sistema de capas semitransparentes sobre fondo blanco. Los bordes pasan a `slate-200`, y el texto adopta tonos oscuros. El efecto glassmorphism sigue presente pero con mayor contraste sobre las superficies claras, lo que facilita la lectura en entornos con mucha luz ambiental.
+  </Tab>
+</Tabs>
+
+## Sistema de diseño
+
+El aspecto visual de Guías AESIA está construido sobre tres pilares que se mantienen en ambos modos:
+
+<AccordionGroup>
+  <Accordion title="Tipografía: fuente Outfit">
+    Toda la plataforma utiliza la fuente **Outfit**, una sans-serif geométrica optimizada para pantalla. Su diseño neutro y sus pesos variables garantizan legibilidad tanto en tamaños pequeños de interfaz como en titulares de módulo.
+  </Accordion>
+  <Accordion title="Glassmorphism">
+    Las tarjetas, paneles de navegación y overlays emplean `backdrop-blur-xl` combinado con fondos semitransparentes (`bg-white/90` en claro, `bg-slate-800/90` en oscuro). Este efecto crea una sensación de profundidad y capas sin recurrir a sombras opacas, y es coherente en todos los componentes de la plataforma.
+  </Accordion>
+  <Accordion title="Micro-animaciones">
+    Los elementos interactivos —botones, tarjetas de guía, iconos del toggle de tema— utilizan transiciones de Framer Motion. Las animaciones de entrada y salida están calibradas entre 150 ms y 300 ms para ser perceptibles sin interrumpir el flujo de uso. El icono del botón de tema rota 90 grados al cambiar de estado, proporcionando retroalimentación visual inmediata.
+  </Accordion>
+</AccordionGroup>
+
+## Persistencia del tema
+
+La preferencia de tema se guarda en `localStorage` con la clave `theme`. El comportamiento es el siguiente:
+
+- Al recargar la página o abrir una nueva pestaña, el tema se restaura desde `localStorage`.
+- Cada dispositivo y navegador mantiene su propia preferencia de forma independiente.
+- La plataforma evita el parpadeo de hidratación: los estilos se aplican antes de que React renderice la interfaz completa.
+
+<Tip>
+Si usas la plataforma en un monitor externo con mayor brillo, el modo claro puede mejorar la legibilidad. Para sesiones nocturnas o en pantallas pequeñas, el modo oscuro reduce la fatiga visual.
+</Tip>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Soporte multilingüe" icon="globe" href="/customization/language">
+    Cambia el idioma de la plataforma entre español, gallego, catalán y euskera.
+  </Card>
+  <Card title="Arquitectura técnica" icon="server" href="/development/architecture">
+    Conoce cómo está estructurado el sistema de temas y proveedores de contexto.
+  </Card>
+</CardGroup>

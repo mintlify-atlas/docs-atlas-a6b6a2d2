@@ -1,0 +1,82 @@
+---
+title: 'Guía 11: Ciberseguridad en sistemas de IA de alto riesgo'
+description: 'Artículo 15: protección de sistemas de IA contra envenenamiento de datos, evasión, extracción de modelos, control de accesos RBAC y formación del equipo.'
+---
+
+La **Guía 11 de la AESIA** aborda el cumplimiento de los requisitos de ciberseguridad del artículo 15 del Reglamento Europeo de Inteligencia Artificial. A diferencia de la ciberseguridad tradicional en tecnologías de la información, los sistemas de IA presentan vulnerabilidades únicas derivadas de su naturaleza estadística y de los datos con los que aprenden. Proteger un sistema de IA es una obligación legal, no una opción.
+
+## Qué cubre esta guía
+
+Esta guía explica cómo identificar y mitigar las vulnerabilidades específicas de los sistemas de IA: envenenamiento de datos, ataques de evasión, extracción e inversión de modelos y defectos intrínsecos del software. También detalla cómo establecer políticas de control de acceso, cómo integrar la seguridad de la IA en la estrategia general de ciberseguridad de la organización y qué debe incluirse en la documentación técnica.
+
+<Note>
+El artículo 15.5 del Reglamento exige que los sistemas de IA de alto riesgo sean resistentes a intentos no autorizados de alterar su uso, resultados o funcionamiento, y que prevengan ataques como el envenenamiento de datos, los ejemplos adversarios y los ataques a la confidencialidad.
+</Note>
+
+## Conceptos clave
+
+### Superficie de ataque expandida
+
+Los sistemas de IA presentan un vector de ataque más amplio que el software tradicional. Las principales amenazas incluyen:
+
+- **Envenenamiento de datos (*Data Poisoning*):** Manipulación del conjunto de datos de entrenamiento para que el modelo aprenda comportamientos incorrectos o sesgados. Es la amenaza más grave durante el diseño y el entrenamiento.
+- **Ataques de evasión:** Perturbaciones casi imperceptibles en los datos de entrada durante la inferencia para forzar al modelo a cometer errores de clasificación o predicción.
+- **Extracción de modelo:** El atacante clona o replica la funcionalidad del modelo interrogándolo masivamente para analizar sus respuestas.
+- **Inversión de modelo:** El atacante usa la información de salida del modelo para inferir o reconstruir los datos sensibles utilizados en el entrenamiento.
+
+### Mitigación del envenenamiento de datos
+
+La Guía 11 exige implementar controles de seguridad estrictos sobre los datos:
+
+- **Control de versiones** con herramientas como DVC para mantener una traza inmutable de cambios y actores.
+- **Higienización de datos:** Técnicas de limpieza para tratar anomalías y valores atípicos.
+- **Monitorización continua** de la distribución de los datos de entrada para detectar firmas de envenenamiento.
+- **Permisos restrictivos** en repositorios de datos con arquitecturas matemáticamente resilientes.
+
+### Protección frente a ataques adversarios
+
+Para combatir los ataques de evasión, la guía recomienda el **entrenamiento adversario** (*adversarial training*), que expone al modelo a ataques simulados durante el aprendizaje para robustecerlo. Frente a la extracción e inversión, las medidas incluyen *rate limiting* (limitación de peticiones por usuario), privacidad diferencial y reducción de verbosidad en los mensajes de error.
+
+Para los defectos intrínsecos del software, se requiere análisis SAST (estático) y DAST (dinámico), comprobación de CVEs en librerías y actualización constante de los marcos de trabajo (TensorFlow, PyTorch).
+
+### Gobernanza de accesos y formación
+
+La primera línea de defensa es el **control de acceso basado en roles (RBAC)** aplicando el principio de mínimo privilegio: cada persona solo accede a los recursos estrictamente necesarios para su función. Los planes de formación en ciberseguridad IA deben cubrir envenenamiento, ataques adversarios y explotación de modelos para todo el personal implicado.
+
+## Términos de referencia
+
+<AccordionGroup>
+  <Accordion title="Envenenamiento de datos (Data Poisoning)">
+    Ataque en la fase de entrenamiento que manipula el conjunto de datos para que el modelo aprenda reglas incorrectas o desarrolle comportamientos maliciosos controlados por el atacante.
+  </Accordion>
+  <Accordion title="Ataque de evasión">
+    Ataque en la fase de inferencia que introduce perturbaciones diseñadas en los datos de entrada para engañar al modelo y forzar predicciones erróneas.
+  </Accordion>
+  <Accordion title="Principio de mínimo privilegio">
+    Política de seguridad que dicta que cada usuario solo debe tener los permisos estrictamente necesarios durante el tiempo indispensable para realizar su tarea.
+  </Accordion>
+  <Accordion title="SAST y DAST">
+    Static Application Security Testing (análisis de código sin ejecutarlo) y Dynamic Application Security Testing (análisis del sistema en ejecución). Ambos detectan vulnerabilidades en el software del sistema de IA.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+Para el quiz de la Guía 11, distingue bien los cuatro tipos de ataques adversarios (envenenamiento, evasión, extracción, inversión) y a qué fase del ciclo de vida afecta cada uno. Es el eje central del cuestionario.
+</Tip>
+
+## Módulos de aprendizaje
+
+<CardGroup cols={2}>
+  <Card title="Flashcards de ciberseguridad" icon="rectangle-history" href="/modules/flashcards">
+    Repasa los ataques adversarios, el principio de mínimo privilegio, SAST/DAST y privacidad diferencial.
+  </Card>
+  <Card title="Quiz interactivo" icon="circle-question" href="/modules/quiz">
+    Pon a prueba tu conocimiento sobre tipos de ataque, controles técnicos y responsabilidades del proveedor.
+  </Card>
+  <Card title="Glosario de ciberseguridad" icon="book" href="/modules/glossary">
+    Consulta las definiciones oficiales de CVE, CWE, Defensive Distillation, OoD Data, STRIP y más términos de la Guía 11.
+  </Card>
+  <Card title="Guía relacionada: solidez" icon="shield" href="/guides/solidez">
+    Un ataque de envenenamiento compromete directamente la solidez del modelo. Estudia ambas guías de forma complementaria.
+  </Card>
+</CardGroup>

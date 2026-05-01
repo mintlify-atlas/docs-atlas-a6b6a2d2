@@ -1,0 +1,72 @@
+---
+title: 'Hoja de ruta y estado del proyecto Guías AESIA'
+description: 'Estado actual, elementos completados, en progreso y planificados de Guías AESIA 4.0, incluyendo la integración con MencIA y el enfoque Vibe Coding.'
+
+---
+
+Guías AESIA 4.0 es un proyecto activo en desarrollo continuo. La primera versión completa cubre las 16 guías técnicas de la AESIA en español con una interfaz adaptativa y tres módulos de juego educativo operativos. Las siguientes fases se centran en la internacionalización de la plataforma, el refinamiento de la zona de gamificación y la integración con el ecosistema MencIA para la formación de empleados públicos.
+
+## Estado del proyecto
+
+| Estado | Módulo | Detalle |
+|:---:|---|---|
+| Completado | Contenido de las 16 guías en español | Carga de contenido completa |
+| Completado | Interfaz adaptativa (Claro/Oscuro) | Rediseño UX y adaptación visual completados en toda la plataforma |
+| Completado | Juego: Rosco RIA | Motor de validación de respuestas (ignora mayúsculas/tildes) y sistema de pistas operativos |
+| Completado | Juego: IA Aventura | Sistema de misiones y persistencia de datos ("El Nexo", etc.) corregido |
+| Pendiente | Inglés | Pendiente de integrar la traducción oficial |
+| Pendiente | Gallego, Euskera y Catalán | Traducción e integración en progreso |
+| En progreso | Zona de gamificación y retos | Pendiente de pulir dinámicas en submódulos restantes y balanceo general |
+
+## Soporte de idiomas
+
+| Idioma | Código | Estado |
+|--------|--------|--------|
+| Español | `es` | Completo |
+| Inglés | `en` | En desarrollo |
+| Gallego | `gl` | En progreso |
+| Euskera | `eu` | En progreso |
+| Catalán | `ca` | En progreso |
+
+## Integración con MencIA
+
+<Note>
+  Está previsto que Guías AESIA 4.0 se integre en el plan de alfabetización en IA de **MencIA**, la estrategia de Inteligencia Artificial de la Diputación de Lugo. El objetivo es que la plataforma sirva como recurso formativo interactivo para empleados públicos, alineando el aprendizaje del AI Act con las necesidades de modernización de la administración local.
+</Note>
+
+## Metodología de desarrollo: Vibe Coding
+
+El proyecto ha sido desarrollado íntegramente mediante **AI-Driven Development** (Vibe Coding), orquestando modelos avanzados de lenguaje (LLMs) para la arquitectura, lógica y diseño. El flujo de trabajo ha incluido:
+
+<AccordionGroup>
+  <Accordion title="Arquitectura Next.js 16 (App Router)">
+    Diseño de una estructura escalable para albergar 16 guías técnicas y múltiples módulos de juego en una aplicación de página única, usando el sistema de rutas de directorios del App Router.
+  </Accordion>
+  <Accordion title="Ingeniería de datos interactiva">
+    Transformación de las Guías Técnicas de la AESIA en estructuras de datos JSON tipadas con TypeScript para alimentar los motores de Quiz, Flashcards y Glosario.
+  </Accordion>
+  <Accordion title="UI/UX premium con Tailwind y Framer Motion">
+    Creación de una interfaz fluida con soporte nativo para temas claro/oscuro, micro-animaciones y diseño adaptativo responsivo.
+  </Accordion>
+  <Accordion title="Lógica de gamificación">
+    Desarrollo de los motores lógicos para el Escape Room, el Rosco RIA y la Aventura de Texto, incluyendo validación de respuestas y persistencia de estado.
+  </Accordion>
+  <Accordion title="Debugging y optimización">
+    Resolución iterativa de conflictos de hidratación en React 19 y optimización de componentes 3D (Three.js) mediante agentes de IA.
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  Esta plataforma es un recurso educativo diseñado para facilitar la comprensión de la normativa. Su contenido ha sido desarrollado mediante metodologías de Vibe Coding (IA Generativa), por lo que pueden existir omisiones o errores de interpretación. La información oficial y vinculante se encuentra exclusivamente en los documentos originales de la AESIA.
+</Note>
+
+## Explorar más
+
+<CardGroup cols={2}>
+  <Card title="Guía de contribución" icon="code-pull-request" href="/development/contributing">
+    Cómo añadir contenido, nuevos idiomas o mejoras al proyecto.
+  </Card>
+  <Card title="Juegos educativos" icon="gamepad" href="/games/overview">
+    Descubre los módulos de gamificación disponibles en la plataforma.
+  </Card>
+</CardGroup>

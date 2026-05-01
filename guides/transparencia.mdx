@@ -1,0 +1,73 @@
+---
+title: "Guía 08: Transparencia e información en sistemas de IA"
+description: "Artículo 13 del AI Act: instrucciones de uso, explicabilidad, contrafactualidad y comunicación clara a los responsables del despliegue de sistemas de IA."
+---
+
+La Guía 08 de la AESIA desarrolla las obligaciones del artículo 13 del Reglamento Europeo de IA sobre transparencia y provisión de información. Es una guía práctica para proveedores y responsables del despliegue: un sistema de IA de alto riesgo debe ser lo suficientemente transparente como para que quienes lo operan puedan interpretar sus resultados, supervisarlo correctamente y detectar fallos.
+
+## ¿Qué significa transparencia en la IA?
+
+La transparencia implica diseñar sistemas que informen sobre su funcionamiento de manera clara y comprensible, permitiendo a los usuarios entender la lógica subyacente y utilizar adecuadamente el sistema. El principal desafío es la **"caja negra"**: algoritmos complejos como redes neuronales profundas producen decisiones difíciles de interpretar para los humanos.
+
+<Note>
+  La transparencia **no es opcional**: es un requisito legal del **Artículo 13** del Reglamento Europeo de IA, indispensable también para cumplir con la supervisión humana exigida en el Artículo 14.
+</Note>
+
+## Requisitos del Artículo 13
+
+El Artículo 13 establece tres pilares obligatorios:
+
+<AccordionGroup>
+  <Accordion title="1. Diseño transparente (Ap. 1)">
+    Los sistemas deben diseñarse garantizando un nivel de transparencia suficiente para que los responsables del despliegue puedan interpretar y usar correctamente los resultados de salida.
+  </Accordion>
+  <Accordion title="2. Instrucciones de uso (Ap. 2)">
+    El sistema debe acompañarse de instrucciones que sean **concisas, completas, claras, accesibles y comprensibles** para el responsable del despliegue. Pueden proporcionarse en formato digital.
+  </Accordion>
+  <Accordion title="3. Contenido mínimo de las instrucciones (Ap. 3)">
+    Las instrucciones deben incluir obligatoriamente:
+    - **Identidad del proveedor:** Datos completos y de contacto.
+    - **Capacidades y limitaciones:** Finalidad prevista, nivel de precisión, solidez, ciberseguridad.
+    - **Impacto en personas:** Rendimiento respecto a colectivos vulnerables.
+    - **Datos:** Especificaciones de los datos de entrenamiento, validación y prueba.
+    - **Supervisión y recursos:** Medidas de supervisión aplicables e infraestructura necesaria.
+  </Accordion>
+</AccordionGroup>
+
+## Medidas prácticas para la transparencia
+
+| Medida | Descripción |
+|---|---|
+| **Análisis Exploratorio de Datos (EDA)** | Entender la representatividad, distribución y posibles sesgos de los datos para comunicarlos transparentemente. |
+| **Adaptar el lenguaje** | Traducir la salida técnica a vocabulario comprensible para cada perfil: técnicos, gestores, ciudadanos. |
+| **Contrafactualidad** | Explicar qué variables tendrían que haber cambiado para obtener una decisión diferente. |
+| **Herramientas de interpretabilidad** | Usar técnicas como LIME o SHAP para explicar las decisiones de modelos de caja negra. |
+| **Canal de información** | Habilitar un portal web o wiki accesible permanentemente para todas las partes interesadas. |
+
+## Flashcards representativas de esta guía
+
+| Concepto | Definición |
+|---|---|
+| Contrafactualidad | Explicación de qué tendría que haber sido diferente en los datos de entrada para obtener un resultado distinto. |
+| Caja negra | Modelo de IA cuyo proceso interno de toma de decisiones no es directamente interpretable por humanos. |
+| LIME / SHAP | Herramientas de interpretabilidad para explicar las predicciones de modelos complejos. |
+| Instrucciones de uso | Documento obligatorio con información sobre el sistema, sus capacidades, limitaciones y medidas de supervisión. |
+
+<Tip>
+  La transparencia y la supervisión humana (Guía 06) están estrechamente vinculadas: un operador no puede vigilar eficazmente un sistema que no entiende. Estudia ambas guías juntas.
+</Tip>
+
+<CardGroup cols={2}>
+  <Card title="Flashcards — Guía 08" icon="cards-blank" href="/modules/flashcards">
+    Practica los conceptos de transparencia e interpretabilidad con tarjetas de memoria.
+  </Card>
+  <Card title="Quiz — Guía 08" icon="circle-question" href="/modules/quiz">
+    Pon a prueba tu conocimiento del Artículo 13 con preguntas de opción múltiple.
+  </Card>
+  <Card title="Supervisión humana" icon="user-check" href="/guides/supervision-humana">
+    Guía 06: la transparencia es requisito previo para una supervisión humana efectiva.
+  </Card>
+  <Card title="Documentación técnica" icon="file-lines" href="/guides/documentacion-tecnica">
+    Guía 15: la transparencia también debe reflejarse en la documentación técnica del sistema.
+  </Card>
+</CardGroup>

@@ -1,0 +1,85 @@
+---
+title: "Guía 07: Datos y gobernanza del dato en IA"
+description: "Requisitos del artículo 10 del AI Act para la gestión y gobernanza de datos en sistemas de IA de alto riesgo: calidad, trazabilidad, sesgos y ciclo de vida."
+---
+
+La Guía 07 de la AESIA desarrolla los requisitos del artículo 10 del Reglamento Europeo de IA sobre gobernanza y gestión de datos. Es esencial para cualquier organización que entrene, valide o pruebe sistemas de IA de alto riesgo: los conjuntos de datos deben ser pertinentes, representativos, íntegros y libres de errores para garantizar la calidad del sistema y evitar discriminaciones prohibidas.
+
+## ¿Qué es el gobierno del dato en la IA?
+
+El gobierno del dato es el conjunto de políticas, procedimientos, procesos y normas implementados para garantizar que los datos utilizados en IA son adecuados, pertinentes, suficientemente representativos y cumplen los requisitos de calidad exigidos. Una mala gobernanza puede conducir a resultados sesgados o inexactos que afecten a la salud, la seguridad o los derechos fundamentales de las personas.
+
+<Note>
+  Esta guía desarrolla el **Artículo 10** del Reglamento Europeo de IA. Aplica a los tres tipos de conjuntos de datos que todo sistema de alto riesgo debe gestionar: **entrenamiento, validación y prueba**.
+</Note>
+
+## Requisitos de calidad del dato (Art. 10)
+
+Los conjuntos de datos deben cumplir estas propiedades:
+
+| Propiedad | Descripción |
+|---|---|
+| **Pertinencia** | Los datos deben ser relevantes para la finalidad prevista del sistema. |
+| **Representatividad** | Deben representar adecuadamente la realidad y los grupos de personas afectados. |
+| **Completitud** | Deben estar completos para la finalidad prevista, sin lagunas significativas. |
+| **Libre de errores** | Deben identificarse y corregirse los errores en la medida de lo posible. |
+
+## Ciclo de vida de los datos
+
+<Steps>
+  <Step title="Recopilación">
+    Documentar la fuente y el método de recopilación. Para datos personales, justificar la finalidad original de su recogida.
+  </Step>
+  <Step title="Preparación">
+    Aplicar operaciones de calidad del dato: medición y mejora, etiquetado y anotación, depuración, enriquecimiento, transformación y análisis de sesgos.
+  </Step>
+  <Step title="Análisis de sesgos">
+    Identificar fuentes de sesgo (contextual, cultural, algorítmico) y aplicar métricas de mitigación. Los datos etiquetados automáticamente **no deben asumirse como correctos** — requieren validación por muestra aleatoria.
+  </Step>
+  <Step title="Disposición y eliminación">
+    Definir el período de conservación de cada dato. Eliminar cuando se corrija el sesgo o finalice su período de retención.
+  </Step>
+</Steps>
+
+## Categorías especiales de datos (Art. 10.5)
+
+<Warning>
+  El tratamiento de categorías especiales de datos personales (origen étnico, salud, biometría, etc.) solo está permitido cuando sea **estrictamente necesario** para detectar y corregir sesgos, y únicamente si los datos sintéticos o anonimizados no son suficientes para ello.
+</Warning>
+
+Cuando aplica, deben cumplirse todas estas salvaguardias:
+
+- Aplicar **seudonimización** y cifrado.
+- Controles de acceso estrictos con trazabilidad de acceso.
+- **Prohibición absoluta** de transmitir o transferir los datos a terceros.
+- **Eliminación inmediata** al corregir el sesgo o al finalizar el período de conservación.
+- Mantener registros de actividad que justifiquen la necesidad del tratamiento.
+
+## Glosario clave de esta guía
+
+| Término | Definición |
+|---|---|
+| Gobierno del dato | Conjunto de políticas y normas para garantizar la calidad, pertinencia y representatividad de los datos de IA. |
+| Sesgo algorítmico | Error sistemático en datos o modelo que produce resultados injustos o discriminatorios. |
+| Seudonimización | Sustitución de identificadores directos por pseudónimos para proteger datos personales. |
+| Anonimización | Eliminación de datos de forma que la persona no pueda identificarse directa ni indirectamente. |
+| Calidad del dato | Dimensiones (completitud, consistencia, precisión, equilibrio, diversidad) que determinan la idoneidad de un dato. |
+
+<Tip>
+  La Guía 07 se complementa directamente con la **Guía 09 (Precisión)** y la **Guía 05 (Gestión de Riesgos)**: unos datos de alta calidad son la base de la precisión del sistema y el punto de partida para identificar riesgos.
+</Tip>
+
+<CardGroup cols={2}>
+  <Card title="Flashcards — Guía 07" icon="cards-blank" href="/modules/flashcards">
+    Memoriza los conceptos clave de gobernanza del dato con tarjetas interactivas.
+  </Card>
+  <Card title="Quiz — Guía 07" icon="circle-question" href="/modules/quiz">
+    Comprueba tu comprensión del Artículo 10 con preguntas de opción múltiple.
+  </Card>
+  <Card title="Precisión" icon="bullseye" href="/guides/precision">
+    Guía 09: cómo la calidad de los datos impacta en la precisión del sistema.
+  </Card>
+  <Card title="Gestión de riesgos" icon="shield" href="/guides/gestion-riesgos">
+    Guía 05: los sesgos en datos son una fuente de riesgo a gestionar activamente.
+  </Card>
+</CardGroup>

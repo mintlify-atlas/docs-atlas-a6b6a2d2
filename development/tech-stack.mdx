@@ -1,0 +1,82 @@
+---
+title: 'Stack tecnológico: Next.js, React y TailwindCSS'
+description: 'Dependencias, versiones y propósito de cada tecnología del stack de Guías AESIA 4.0: Next.js, React, TailwindCSS, Framer Motion y más.'
+
+---
+
+Guías AESIA 4.0 combina un conjunto de tecnologías modernas seleccionadas para ofrecer una experiencia de usuario premium: renderizado rápido con Next.js 16 App Router, animaciones fluidas con Framer Motion 12, escenas 3D con Three.js y un sistema de diseño utility-first con TailwindCSS 4. Todas las dependencias están tipadas con TypeScript 5 para garantizar la solidez del código a lo largo del proyecto.
+
+## Tabla de dependencias
+
+| Tecnología | Versión | Uso |
+|---|---|---|
+| **Next.js** | 16.1.6 | Framework React con App Router |
+| **React** | 19.2.3 | Librería de interfaz de usuario |
+| **TypeScript** | 5 | Tipado estático |
+| **TailwindCSS** | 4 | Sistema de diseño utility-first |
+| **Framer Motion** | 12.31.0 | Animaciones fluidas y transiciones |
+| **Three.js / React Three Fiber** | 0.182.0 | Escenas 3D en el HeroScene |
+| **Lucide React** | 0.563.0 | Iconografía moderna |
+| **Radix UI** | 1.2.4 | Componentes accesibles sin estilo |
+| **react-markdown** | 10.1.0 | Renderizado de contenido Markdown |
+| **remark-gfm** | 4.0.1 | Extensión GFM para react-markdown |
+
+## Detalle por categoría
+
+<AccordionGroup>
+  <Accordion title="Next.js 16 y React 19">
+    La aplicación usa el **App Router** de Next.js 16, que permite definir rutas mediante el sistema de directorios dentro de `app/`. Las rutas dinámicas como `/guides/[id]` y sus sub-rutas (`/flashcards`, `/quiz`, `/glossary`) se implementan con este sistema.
+
+    React 19 introduce mejoras en la gestión de estado y la concurrencia. El proyecto resolvió conflictos de hidratación propios de React 19 en componentes 3D mediante la directiva `suppressHydrationWarning` en el layout raíz.
+  </Accordion>
+  <Accordion title="TailwindCSS 4">
+    TailwindCSS 4 se configura mediante `@tailwindcss/postcss` como plugin PostCSS. Se usa `tailwind-merge` (3.4.0) para combinar clases condicionalmente sin conflictos, y `class-variance-authority` (0.7.1) para gestionar variantes de componentes. El paquete `@tailwindcss/typography` añade el plugin `prose` utilizado en el renderizado de contenido Markdown de las guías.
+  </Accordion>
+  <Accordion title="Framer Motion 12">
+    Framer Motion 12 gestiona todas las micro-animaciones de la interfaz: entrada de componentes, transiciones entre vistas, animación de giro de las flashcards y efectos de aparición en las tarjetas de guías. La versión 12 introduce mejoras de rendimiento en las animaciones basadas en scroll.
+  </Accordion>
+  <Accordion title="Three.js y React Three Fiber">
+    La escena 3D del `HeroScene` se construye con **Three.js 0.182** a través de **React Three Fiber 9.5.0** (`@react-three/fiber`) y los helpers de **@react-three/drei 10.7.7**. Estos paquetes permiten declarar geometrías y materiales 3D como componentes React, integrándose de forma nativa con el árbol de componentes de la aplicación.
+  </Accordion>
+  <Accordion title="Radix UI y accesibilidad">
+    **Radix UI** (`@radix-ui/react-slot` 1.2.4) proporciona primitivas de componentes sin estilo y totalmente accesibles (ARIA, navegación por teclado). Se combina con TailwindCSS para aplicar el diseño visual sin renunciar a la semántica y accesibilidad de los componentes.
+  </Accordion>
+  <Accordion title="Renderizado de Markdown">
+    El contenido de las guías técnicas se almacena en formato Markdown dentro de los archivos de datos TypeScript. **react-markdown 10.1.0** renderiza ese contenido como HTML en el componente `GuideContent`. **remark-gfm 4.0.1** extiende el parser con soporte para tablas, listas de tareas y otros elementos de GitHub Flavored Markdown.
+  </Accordion>
+</AccordionGroup>
+
+## Scripts disponibles
+
+```json package.json
+{
+  "scripts": {
+    "dev":   "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint":  "eslint"
+  }
+}
+```
+
+| Script | Comando | Descripción |
+|--------|---------|-------------|
+| Desarrollo | `npm run dev` | Servidor local con recarga en caliente |
+| Compilación | `npm run build` | Genera el build de producción optimizado |
+| Producción | `npm run start` | Inicia el servidor con el build generado |
+| Lint | `npm run lint` | Analiza el código con ESLint 9 |
+
+<Tip>
+  El proyecto usa **ESLint 9** con la configuración `eslint-config-next` 16.1.6, que incluye reglas específicas para Next.js (importaciones, imágenes, accesibilidad y rendimiento).
+</Tip>
+
+## Explorar más
+
+<CardGroup cols={2}>
+  <Card title="Arquitectura del proyecto" icon="sitemap" href="/development/architecture">
+    Estructura de directorios, rutas y capa de datos de la aplicación.
+  </Card>
+  <Card title="Guía de contribución" icon="code-pull-request" href="/development/contributing">
+    Cómo instalar el proyecto localmente y contribuir con contenido o código.
+  </Card>
+</CardGroup>

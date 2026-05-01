@@ -1,0 +1,97 @@
+---
+title: 'Guía 16: Manual de checklist de requisitos del AI Act'
+description: 'Guía 16: autodiagnóstico del sandbox español para evaluar los 12 requisitos del AI Act, niveles de madurez y construcción del Plan de Adaptación (PDA).'
+---
+
+La **Guía 16 de la AESIA** es la herramienta de cierre del ciclo formativo: un manual de autodiagnóstico que consolida los 12 requisitos normativos del Reglamento Europeo de Inteligencia Artificial en una herramienta práctica en formato Excel. Su objetivo es que las entidades participantes en el sandbox regulatorio piloto español puedan medir la distancia entre su sistema actual y el cumplimiento legal, y diseñar una hoja de ruta concreta para cubrirla.
+
+## Qué cubre esta guía
+
+Esta guía explica el propósito del sandbox regulatorio español, cómo usar la herramienta de checklist, qué significan los niveles de madurez, cómo proponer medidas adicionales propias y cómo la herramienta genera automáticamente los insumos para construir un Plan de Adaptación (PDA) personalizado.
+
+<Note>
+La checklist no es un formulario oficial de conformidad. Es una herramienta de diagnóstico de uso interno que facilita la identificación de brechas y la planificación de acciones correctivas dentro del entorno del sandbox regulatorio.
+</Note>
+
+## Los 12 requisitos cubiertos
+
+La herramienta cubre los 12 requisitos normativos fundamentales del Reglamento para sistemas de IA de alto riesgo. Cada requisito tiene su propia checklist independiente:
+
+| Núm. | Requisito | Guía de referencia |
+|---|---|---|
+| 1 | Gestión de la calidad | Guía 04 |
+| 2 | Gestión de riesgos | Guía 05 |
+| 3 | Supervisión humana | Guía 06 |
+| 4 | Datos y gobernanza del dato | Guía 07 |
+| 5 | Transparencia | Guía 08 |
+| 6 | Precisión | [Guía 09](/guides/precision) |
+| 7 | Solidez | [Guía 10](/guides/solidez) |
+| 8 | Ciberseguridad | [Guía 11](/guides/ciberseguridad) |
+| 9 | Registros | [Guía 12](/guides/registros) |
+| 10 | Documentación técnica | [Guía 15](/guides/documentacion-tecnica) |
+| 11 | Vigilancia poscomercialización | [Guía 13](/guides/vigilancia-poscomercializacion) |
+| 12 | Gestión de incidentes graves | [Guía 14](/guides/notificacion-incidentes) |
+
+## Conceptos clave
+
+### La fase de diagnóstico del sandbox
+
+El sandbox regulatorio piloto español es un entorno controlado y supervisado por la SEDIA (Secretaría de Estado de Digitalización e Inteligencia Artificial) que permite a las entidades experimentar, detectar riesgos y adaptar sus sistemas al Reglamento antes de su comercialización definitiva. La fase de diagnóstico tiene dos objetivos principales: realizar un autodiagnóstico exhaustivo del sistema frente a las directrices del Reglamento, y diseñar un **Plan de Adaptación (PDA)** que actúe como hoja de ruta estricta hacia el cumplimiento.
+
+### Estructura de la herramienta de checklist
+
+Cada herramienta Excel se estructura en **9 pestañas**: 5 informativas y 4 operativas.
+
+**Pestañas informativas:**
+- **Portada:** Avisos de confidencialidad y contexto normativo.
+- **Intro:** Instrucciones de uso resumidas y didácticas.
+- **Artículo RIA:** Detalle de los apartados normativos aplicables.
+- **Medidas Guías (MG):** Catálogo de medidas extraídas de buenas prácticas, con el "cómo" cumplir cada requisito.
+- **Relación MG-Apart:** Matriz que vincula cada medida guía con los apartados normativos que cubre.
+
+**Pestañas operativas:**
+- **Autoeval MG:** La entidad asigna el nivel de dificultad percibido (Alto, Medio, Bajo) y el nivel de madurez (L1 a L8) para cada medida guía.
+- **Medidas Adicionales (MA):** Espacio para proponer medidas propias que no estaban en las guías.
+- **Relación MA-Apart:** Vincula las medidas adicionales con los apartados normativos que cubren.
+- **Autoeval MA:** La entidad evalúa el nivel de dificultad y madurez de sus medidas adicionales.
+
+### Niveles de madurez (L1 a L8)
+
+Al seleccionar un nivel de madurez, la herramienta actualiza automáticamente el "Estado Diagnóstico" a "01. Ya diagnosticada" y determina el hito del Plan de Adaptación correspondiente:
+
+<AccordionGroup>
+  <Accordion title="L1 — No documentada ni implementada">
+    La medida no existe en el sistema. El Plan de Adaptación marcará la acción de documentar e implementar desde cero.
+  </Accordion>
+  <Accordion title="L5 — Documentada e implementada">
+    La medida existe y está documentada. El Plan de Adaptación indicará "03. Adaptación completa".
+  </Accordion>
+  <Accordion title="L8 — No necesaria en mi sistema">
+    La medida no aplica al sistema evaluado. El Plan de Adaptación marcará "05. Ninguna adaptación requerida".
+  </Accordion>
+</AccordionGroup>
+
+### Medidas adicionales (MA)
+
+Si la entidad cuenta con prácticas propias que cumplen con el Reglamento pero no estaban contempladas en las guías, puede proponerlas en la pestaña de Medidas Adicionales. Cada medida recibe un identificador único con el prefijo **MA**. La SEDIA evalúa las medidas adicionales y emite uno de tres estados: `Pendiente`, `OK` o `NO_OK`, consultando a expertos técnicos si es necesario.
+
+<Tip>
+Antes de empezar a rellenar la checklist, lee las pestañas informativas en orden: Portada, Intro, Artículo RIA y Medidas Guías. Entender qué mide cada columna antes de comenzar la autoevaluación ahorra tiempo y mejora la calidad del diagnóstico.
+</Tip>
+
+## Módulos de aprendizaje
+
+<CardGroup cols={2}>
+  <Card title="Flashcards de la checklist" icon="rectangle-history" href="/modules/flashcards">
+    Repasa los niveles de madurez, la estructura de 9 pestañas, el Plan de Adaptación y el rol de la SEDIA.
+  </Card>
+  <Card title="Quiz interactivo" icon="circle-question" href="/modules/quiz">
+    Pon a prueba tu conocimiento sobre la herramienta de checklist, los objetivos del sandbox y los niveles de madurez.
+  </Card>
+  <Card title="Glosario del checklist" icon="book" href="/modules/glossary">
+    Consulta las definiciones de PDA, checklist, medidas guías, medidas adicionales, sandbox regulatorio y SEDIA.
+  </Card>
+  <Card title="Visión general de las guías" icon="list" href="/guides/overview">
+    Revisa las 16 guías en su conjunto antes de usar la checklist para obtener una visión completa del Reglamento.
+  </Card>
+</CardGroup>

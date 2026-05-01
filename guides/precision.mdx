@@ -1,0 +1,79 @@
+---
+title: 'Guía 09: Precisión en sistemas de IA de alto riesgo'
+description: 'Guía 09: métricas de evaluación, sobreaprendizaje, benchmarks y monitorización continua de la precisión conforme al artículo 15 del AI Act.'
+---
+
+La **Guía 09 de la AESIA** desarrolla el requisito de precisión establecido en el artículo 15 del Reglamento Europeo de Inteligencia Artificial. En este contexto, la precisión no es solo una cifra matemática: es una obligación legal que vincula el rendimiento real del sistema con su finalidad prevista, desde el diseño hasta la retirada del servicio.
+
+## Qué cubre esta guía
+
+Esta guía aborda cómo seleccionar y documentar métricas de evaluación adecuadas según el tipo de algoritmo y la finalidad del sistema, cómo evitar el sobreaprendizaje (*overfitting*) mediante conjuntos de datos disjuntos, y cómo garantizar que la precisión se mantiene de forma consistente durante toda la vida útil del sistema mediante monitorización continua y benchmarks comparativos. También trata la importancia de desglosar las métricas para colectivos específicos y de documentar todo en la tarjeta del modelo.
+
+<Note>
+Esta guía no tiene carácter vinculante. Ofrece recomendaciones prácticas alineadas con los requisitos del AI Act a la espera de las normas armonizadas definitivas.
+</Note>
+
+## Conceptos clave
+
+### Precisión a lo largo del ciclo de vida
+
+La precisión debe establecerse y monitorizarse en cada etapa del sistema: preprocesamiento de datos, entrenamiento, validación, prueba y producción. Las decisiones de diseño al preparar los datos (filtrado, escalado, manejo de valores nulos) alteran la distribución del conjunto de entrenamiento e impactan directamente en la función objetivo que aprende el algoritmo.
+
+El sobreaprendizaje (*overfitting*) ocurre cuando el modelo se ajusta en exceso a los datos de entrenamiento, memorizando el ruido y perdiendo capacidad de generalizar ante datos nuevos. Para prevenirlo se deben separar rigurosamente los conjuntos de entrenamiento, validación y prueba, y aplicar técnicas de regularización.
+
+### Selección de métricas y función objetivo
+
+El proveedor debe elegir las métricas más adecuadas según el tipo de modelo:
+
+- **Modelos de regresión:** MSE, RMSE, MAE, R².
+- **Modelos de clasificación:** Matriz de confusión, *accuracy*, precisión, *recall*, especificidad, F1-score.
+
+La función objetivo (también llamada *loss function*) debe estar perfectamente alineada con la métrica seleccionada y con la finalidad del sistema para no aprender a resolver un problema incorrecto.
+
+Una alta precisión global puede enmascarar un bajo rendimiento para minorías o subgrupos específicos, lo que resulta inaceptable si afecta a derechos fundamentales. Las métricas deben desglosarse y analizarse con herramientas de imparcialidad (*fairness*).
+
+### Benchmarks y significancia estadística
+
+Para validar plenamente la precisión, el proveedor debe comparar el modelo frente a bases de datos reconocidas (como ImageNet o CIFAR-10) y demostrar mediante pruebas de significancia estadística (Wilcoxon, T-Test, ANOVA) que las mejoras no se deben al azar.
+
+### Documentación técnica y tarjeta del modelo
+
+El Anexo IV del Reglamento exige documentar los procedimientos de validación y prueba, las características de los conjuntos de datos, los parámetros matemáticos y la evaluación de efectos discriminatorios. La **tarjeta del modelo** (*Model Card*) debe incluir métricas utilizadas y su justificación, umbrales de decisión, cálculo de incertidumbre, limitaciones de adaptabilidad y el impacto previsto sobre colectivos vulnerables.
+
+## Términos de referencia
+
+<AccordionGroup>
+  <Accordion title="Sobreaprendizaje (Overfitting)">
+    Ocurre cuando el modelo se ajusta excesivamente a los datos de entrenamiento, memorizando el ruido y perdiendo su capacidad de generalizar para realizar predicciones precisas sobre datos nuevos.
+  </Accordion>
+  <Accordion title="Modelo base (Baseline Model)">
+    Modelo sencillo que funciona como referencia para el sistema de IA. Su función principal es contextualizar el resultado de los entrenamientos y demostrar que el modelo avanzado aporta mejoras reales.
+  </Accordion>
+  <Accordion title="Función objetivo (Loss Function)">
+    Función matemática que el algoritmo busca optimizar (minimizar o maximizar) durante el entrenamiento para ajustar sus parámetros internos y lograr la precisión deseada.
+  </Accordion>
+  <Accordion title="Benchmark">
+    Prueba de rendimiento estandarizada utilizando bases de datos públicas (como ImageNet) para comparar el modelo con el estado del arte de forma repetible y medible.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+Al estudiar esta guía, presta especial atención a la diferencia entre las métricas de regresión y las de clasificación, y practica leyendo una matriz de confusión. Son los conceptos más frecuentes en el quiz de la guía 09.
+</Tip>
+
+## Módulos de aprendizaje
+
+<CardGroup cols={2}>
+  <Card title="Flashcards de precisión" icon="rectangle-history" href="/modules/flashcards">
+    Repasa los conceptos clave de la Guía 09 con tarjetas de memoria: métricas, overfitting, benchmarks y más.
+  </Card>
+  <Card title="Quiz interactivo" icon="circle-question" href="/modules/quiz">
+    Pon a prueba tus conocimientos sobre métricas de evaluación, tarjetas de modelo y requisitos del Anexo IV.
+  </Card>
+  <Card title="Glosario de precisión" icon="book" href="/modules/glossary">
+    Consulta las definiciones oficiales de AUROC, BLEU, DCG, matriz de confusión y otros términos del glosario de la Guía 09.
+  </Card>
+  <Card title="Guía relacionada: solidez" icon="shield" href="/guides/solidez">
+    La solidez complementa la precisión: aprende cómo garantizar que el sistema resiste errores e inconsistencias del entorno.
+  </Card>
+</CardGroup>

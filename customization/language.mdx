@@ -1,0 +1,81 @@
+---
+title: 'Selección de idioma en la plataforma Guías AESIA'
+description: 'Guías AESIA está disponible en español, gallego, catalán y euskera. Aprende a cambiar el idioma y qué contenidos se adaptan a tu selección.'
+
+---
+
+Guías AESIA es una plataforma diseñada para llegar a todos los territorios del Estado. Por eso integra soporte multilingüe nativo: el español es el idioma principal y el más completo, mientras que el gallego, el catalán y el euskera están en proceso activo de traducción. Al cambiar de idioma, toda la interfaz, los contenidos de las guías y los juegos de gamificación se adaptan automáticamente a tu selección, que queda guardada para que no tengas que elegirla de nuevo al regresar.
+
+## Idiomas disponibles
+
+La plataforma reconoce cinco códigos de idioma. El sistema lee la preferencia guardada en `localStorage` al iniciar y la restaura en cada sesión.
+
+| Idioma   | Código | Estado              |
+|----------|--------|---------------------|
+| Español  | `es`   | Completo            |
+| Inglés   | `en`   | En desarrollo       |
+| Gallego  | `gl`   | En desarrollo       |
+| Euskera  | `eu`   | En desarrollo       |
+| Catalán  | `ca`   | En desarrollo       |
+
+<Note>
+El español (`es`) es el único idioma con contenido completo en esta versión. Las traducciones al inglés, gallego, euskera y catalán están en curso: algunas secciones pueden aparecer en español mientras se completan.
+</Note>
+
+## Cómo cambiar el idioma
+
+El selector de idioma está siempre visible en la barra de navegación superior. Funciona mediante el componente `LanguageSwitcher`.
+
+<Steps>
+  <Step title="Localiza el selector en la barra de navegación">
+    Busca el botón con un icono de globo terráqueo y el código del idioma activo (por ejemplo, `ES`). Está situado en la esquina derecha de la barra superior.
+  </Step>
+  <Step title="Abre el menú desplegable">
+    Haz clic sobre el botón. Aparece un panel con las cuatro opciones disponibles: Español, Galego, Català y Euskera. El idioma activo se muestra resaltado con una marca de verificación.
+  </Step>
+  <Step title="Selecciona tu idioma">
+    Haz clic en la opción que prefieras. El panel se cierra y toda la plataforma cambia al nuevo idioma de forma inmediata, sin recargar la página.
+  </Step>
+</Steps>
+
+## Qué cambia al cambiar de idioma
+
+El cambio de idioma afecta a todos los textos gestionados por el sistema de internacionalización (`Dictionary`):
+
+<AccordionGroup>
+  <Accordion title="Interfaz general">
+    Todos los elementos de navegación, botones, etiquetas y mensajes del sistema se adaptan al idioma seleccionado: menú principal, pie de página, estados de carga y textos de acción como «Comenzar guía» o «Descargar guía completa».
+  </Accordion>
+  <Accordion title="Contenido de las guías">
+    Los títulos de sección, las descripciones de las guías técnicas, los textos introductorios y las etiquetas de organización de contenido se muestran en el idioma activo.
+  </Accordion>
+  <Accordion title="Módulos de aprendizaje">
+    Los módulos de flashcards, cuestionarios y glosario adaptan sus textos de interfaz: etiquetas de tarjetas, botones de navegación, mensajes de resultado y el marcador de preguntas.
+  </Accordion>
+  <Accordion title="Contenido de juegos">
+    La zona de gamificación también responde al idioma activo: títulos, descripciones y textos de estado de la Sala de Escape, El Rosco Regulador y el Modo Aventura.
+  </Accordion>
+</AccordionGroup>
+
+## Persistencia del idioma
+
+La selección se guarda automáticamente en `localStorage` con la clave `language`. Esto significa que:
+
+- Al cerrar y volver a abrir el navegador, la plataforma restaura el idioma que elegiste.
+- La preferencia es independiente por dispositivo y navegador.
+- Si accedes desde un dispositivo nuevo, la plataforma arranca en español (`es`) por defecto.
+
+<Tip>
+Si compartes la plataforma con otras personas, cada una puede mantener su propio idioma activo, ya que la preferencia se guarda en el almacenamiento local de cada navegador.
+</Tip>
+
+## Páginas relacionadas
+
+<CardGroup cols={2}>
+  <Card title="Tema visual" icon="palette" href="/customization/theme">
+    Cambia entre modo claro y oscuro para adaptar la plataforma a tu entorno de trabajo.
+  </Card>
+  <Card title="Vista general de guías" icon="book-open" href="/guides/overview">
+    Explora las 16 guías técnicas de AESIA disponibles en la plataforma.
+  </Card>
+</CardGroup>

@@ -1,28 +1,11 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "name": "Guías AESIA",
+  "projectType": "saas",
+  "projectName": "Guías AESIA",
+  "projectDescription": "Plataforma educativa interactiva que transforma las 16 guías técnicas oficiales de la AESIA sobre el Reglamento Europeo de IA en una experiencia de aprendizaje gamificada con flashcards, quizzes, glosario y juegos educativos.",
   "theme": "almond",
-  "colors": {
-    "primary": "#e21f26",
-    "light": "#302f88",
-    "dark": "#9494bc"
-  },
-  "favicon": "/favicon.svg",
-  "logo": {
-    "light": "https://media.brand.dev/360da0c1-fd64-463c-afd2-6753a423746c.png",
-    "dark": "https://media.brand.dev/360da0c1-fd64-463c-afd2-6753a423746c.png"
-  },
-  "navbar": {
-    "primary": {
-      "type": "github",
-      "href": "https://github.com/ariaslombardero/Guias-AESIA-4.0"
-    }
-  },
-  "footer": {
-    "socials": {
-      "github": "https://github.com/ariaslombardero/Guias-AESIA-4.0"
-    }
-  },
+  "primaryColor": "#e21f26",
+  "lightColor": "#302f88",
+  "darkColor": "#9494bc",
   "navigation": {
     "tabs": [
       {
@@ -118,5 +101,33 @@
         ]
       }
     ]
-  }
+  },
+  "keyFeatures": [
+    "16 guías técnicas oficiales de la AESIA sobre el AI Act europeo",
+    "Flashcards interactivas con animación de giro para memorizar conceptos clave",
+    "Quiz de opción múltiple con puntuación y retroalimentación inmediata",
+    "Glosario visual con búsqueda en tiempo real",
+    "Escape Room temático sobre conformidad con el AI Act",
+    "Rosco RIA (Pasapalabra) con terminología del Reglamento europeo de IA",
+    "IA Aventura: juego de rol narrativo de decisiones regulatorias",
+    "Zona de entrenamiento gamificada con seguimiento de progreso",
+    "Soporte multiidioma: español completo, inglés/gallego/euskera/catalán en desarrollo",
+    "Interfaz adaptativa claro/oscuro con micro-animaciones y glassmorphism"
+  ],
+  "publicApiSurface": [
+    "getGuides(lang?: string): Guide[]",
+    "getGuide(id: string, lang?: string): Guide | undefined",
+    "Guide interface: { id, title, summary, flashcards, quiz, contentIndex, glossary, pdfUrl }",
+    "Flashcard interface: { front, back }",
+    "QuizQuestion interface: { question, options, correctAnswer }",
+    "GlossaryTerm interface: { term, definition }",
+    "ContentSection interface: { title, content, componentId?, componentProps? }",
+    "Route /guides/[id] — Vista principal de una guía",
+    "Route /guides/[id]/flashcards — Módulo de flashcards",
+    "Route /guides/[id]/quiz — Módulo de cuestionario",
+    "Route /guides/[id]/glossary — Glosario de términos",
+    "Route /escape-room — Juego Escape Room",
+    "Route /pasapalabra — Juego Rosco RIA",
+    "Route /aventura — Juego IA Aventura"
+  ]
 }

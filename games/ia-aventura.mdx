@@ -1,0 +1,73 @@
+---
+title: "IA Aventura: juego de rol del Reglamento IA"
+description: "Explora el Reglamento europeo de IA tomando decisiones en escenarios reales de despliegue. Sistema de misiones con progreso persistente."
+---
+
+IA Aventura es un juego de rol narrativo organizado en mundos temáticos, cada uno ligado a una guía técnica de la AESIA. El jugador explora escenarios de despliegue de inteligencia artificial y toma decisiones que deben ser conformes con el Reglamento Europeo de IA. A diferencia de un quiz convencional, la aventura sitúa los conceptos regulatorios en contextos ficticios pero plausibles —hospitales, procesos de selección, sistemas de seguridad— lo que facilita la comprensión de las implicaciones reales de cada artículo.
+
+## Cómo acceder
+
+Puedes iniciar el juego desde la **Zona de entrenamiento** de la página de inicio o accediendo directamente a la ruta `/aventura` de la plataforma.
+
+## Estructura del juego
+
+La aventura está organizada en **16 mundos**, cada uno ligado a una de las guías técnicas de la AESIA. El progreso se guarda de forma independiente por mundo.
+
+| Mundo | Temática | Guía |
+|---|---|---|
+| El nexo | Fundamentos del AI Act | 01 |
+| La frontera legal | Identificación de riesgos y actores | 02 |
+| La arena de pruebas | Evaluación de conformidad | 03 |
+| El tribunal de conformidad | Sistema de gestión de la calidad | 04 |
+| La torre de control | Protocolos de calidad y defensa | 05 |
+| Las tierras del riesgo | Gestión de riesgos | 06 |
+| El archivo de cristal | Gobernanza y calidad del dato | 07 |
+| El ojo del guardián | Supervisión humana | 08 |
+| El espejo de la verdad | Transparencia y explicabilidad | 09 |
+| El blanco perfecto | Precisión y métricas | 10 |
+| La fortaleza inquebrantable | Solidez y resiliencia | 11 |
+| El cortafuegos sombrío | Ciberseguridad | 12 |
+| El observatorio | Vigilancia poscomercialización | 13 |
+| La sala de crisis | Notificación de incidentes graves | 14 |
+| La biblioteca maestra | Documentación técnica | 15 |
+| El laberinto de checklists | Verificación de conformidad | 16 |
+
+## Cómo se juega
+
+<Steps>
+  <Step title="Selecciona un mundo">
+    En la pantalla principal de la aventura aparece la cuadrícula de mundos disponibles. Cada tarjeta muestra el nombre del mundo, una descripción temática, la guía técnica asociada y tu progreso actual en misiones completadas.
+  </Step>
+  <Step title="Elige una misión dentro del mundo">
+    Cada mundo contiene varias misiones de distintos tipos (quiz, simulación, puzzle o jefe final) y niveles de dificultad. Comienza por las misiones de nivel Fácil para construir contexto antes de abordar las más complejas.
+  </Step>
+  <Step title="Lee el escenario narrativo">
+    Cada misión presenta un escenario de texto: una situación concreta de despliegue, auditoría o decisión empresarial relacionada con la IA. Lee el contexto antes de responder, ya que los detalles del escenario son relevantes para elegir la opción correcta.
+  </Step>
+  <Step title="Toma decisiones conformes con el Reglamento">
+    El juego te presenta opciones de respuesta o de actuación. El objetivo es seleccionar las respuestas que reflejan el comportamiento correcto según el AI Act. Las decisiones incorrectas explican por qué la opción elegida incumple la normativa.
+  </Step>
+  <Step title="Desbloquea logros y avanza en el mapa">
+    Completar misiones acumula progreso en cada mundo. El sistema registra tus logros desbloqueados y los muestra en la barra de la pantalla principal. El progreso se guarda automáticamente en tu navegador mediante `localStorage`, por lo que persiste entre sesiones.
+  </Step>
+</Steps>
+
+## Sistema de persistencia
+
+El progreso de IA Aventura —misiones completadas, logros desbloqueados— se almacena en el `localStorage` del navegador. Esto significa que:
+
+- Tu progreso se conserva aunque cierres el navegador o recargues la página.
+- El progreso es local: no se sincroniza entre dispositivos ni navegadores distintos.
+- Si limpias los datos de navegación del navegador, el progreso se perderá.
+
+## Para qué es especialmente útil
+
+IA Aventura es el formato más adecuado para entender las **implicaciones prácticas** del AI Act. Mientras que el Escape Room evalúa conceptos bajo presión de tiempo y el Rosco RIA trabaja el vocabulario, la aventura te enfrenta a dilemas de decisión que replican los que encontrarías en un contexto profesional real.
+
+<Tip>
+  Para sacar el máximo partido a cada mundo, lee la guía técnica correspondiente antes de empezar sus misiones. Por ejemplo, antes de jugar "El ojo del guardián" (Guía 08) revisa la guía de [supervisión humana](/guides/supervision-humana); antes de "El cortafuegos sombrío" (Guía 12) consulta la guía de [ciberseguridad](/guides/ciberseguridad); y antes de "La sala de crisis" (Guía 14) revisa la guía de [notificación de incidentes](/guides/notificacion-incidentes).
+</Tip>
+
+<Note>
+  Las misiones de tipo "jefe final" (boss) son las más exigentes dentro de cada mundo. Están diseñadas para confirmar que has integrado todos los conceptos del mundo antes de avanzar. Completa primero el resto de misiones del mundo antes de intentarlas.
+</Note>

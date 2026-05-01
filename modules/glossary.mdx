@@ -1,0 +1,96 @@
+---
+title: 'Glosario de términos del Reglamento de IA'
+description: 'Diccionario visual interactivo con los términos técnicos y legales de cada guía: búsqueda en tiempo real y ordenación alfabética.'
+
+---
+
+El glosario es un diccionario visual integrado en cada guía que reúne los términos técnicos y jurídicos más relevantes del Reglamento Europeo de Inteligencia Artificial. Los términos se presentan ordenados alfabéticamente y agrupados por letra inicial, con una barra de búsqueda en tiempo real que filtra tanto por nombre del término como por su definición. Esta herramienta es especialmente útil para aclarar conceptos especializados mientras lees el contenido de la guía o practicas con las flashcards y el quiz.
+
+## Cómo acceder al glosario
+
+<Steps>
+  <Step title="Abre una guía">
+    Selecciona cualquier guía disponible desde la página de inicio o desde la sección [Guías: visión general](/guides/overview).
+  </Step>
+  <Step title="Haz clic en la pestaña «Glosario»">
+    En la barra de pestañas del módulo de guía, selecciona **Glosario**. Si la guía no tiene términos definidos, se mostrará un aviso informativo.
+  </Step>
+  <Step title="Busca un término">
+    Escribe en la barra de búsqueda para filtrar los términos en tiempo real. La búsqueda actúa sobre el nombre del término y sobre el texto de la definición.
+  </Step>
+  <Step title="Navega por orden alfabético">
+    Si no usas el buscador, los términos aparecen agrupados por letra inicial con un índice visual. Desplázate para explorar el vocabulario completo de la guía.
+  </Step>
+  <Step title="Lee la definición">
+    Cada tarjeta muestra el nombre del término en azul índigo y su definición en el cuerpo de la tarjeta. Pasa el cursor sobre la tarjeta para ver el efecto de resaltado.
+  </Step>
+</Steps>
+
+## Tipos de glosario
+
+La plataforma distingue dos tipos de glosario según el origen de las definiciones, indicado con una etiqueta en la cabecera:
+
+<Tabs>
+  <Tab title="Glosario oficial">
+    Las definiciones provienen literalmente del **anexo oficial del PDF** de la guía publicado por AESIA. Son el texto legal del Reglamento y constituyen la referencia normativa vinculante.
+
+    Las guías con glosario oficial muestran la etiqueta **«Glosario oficial»** en la cabecera.
+  </Tab>
+  <Tab title="Glosario didáctico">
+    Las definiciones han sido **generadas con apoyo de inteligencia artificial** para facilitar la comprensión del contenido de guías que no incluyen un anexo de glosario en su PDF. Han sido revisadas técnicamente para garantizar su exactitud, pero no constituyen el texto legal del Reglamento.
+
+    Las guías con glosario didáctico muestran la etiqueta **«Glosario didáctico»** y un aviso explicativo en la parte superior de la página.
+  </Tab>
+</Tabs>
+
+## Estructura de datos de un término
+
+Cada entrada del glosario sigue la interfaz `GlossaryTerm` definida en `lib/data/es.ts`:
+
+```typescript
+export interface GlossaryTerm {
+  term: string;       // Nombre del término
+  definition: string; // Definición o explicación del término
+}
+```
+
+El campo `glossaryType` en la interfaz `Guide` indica el tipo de glosario (`'official'` o `'didactic'`) y determina qué etiqueta y avisos se muestran en la cabecera.
+
+```typescript
+export interface Guide {
+  glossary?: GlossaryTerm[];
+  glossaryType?: 'official' | 'didactic';
+  // ...otros campos
+}
+```
+
+## Guías con glosario disponible
+
+<CardGroup cols={2}>
+  <Card title="Introducción al Reglamento" icon="scale-balanced" href="/guides/intro-reglamento">
+    Terminología básica del marco regulatorio europeo de IA.
+  </Card>
+  <Card title="Datos y gobernanza" icon="database" href="/guides/datos-gobernanza">
+    Términos sobre requisitos de datos, calidad y gobernanza.
+  </Card>
+  <Card title="Transparencia" icon="eye" href="/guides/transparencia">
+    Vocabulario sobre obligaciones de transparencia e información.
+  </Card>
+  <Card title="Ciberseguridad" icon="lock" href="/guides/ciberseguridad">
+    Conceptos de seguridad aplicados a sistemas de IA de alto riesgo.
+  </Card>
+</CardGroup>
+
+## Consejos para usar el glosario
+
+<Note>
+  Si encuentras un término desconocido en el contenido de la guía o en las flashcards, abre el glosario y búscalo directamente. La búsqueda en tiempo real devuelve resultados tanto por nombre como por contenido de la definición.
+</Note>
+
+<Note>
+  En guías con glosario didáctico, las definiciones son pedagógicas y están pensadas para facilitar la comprensión, no para su uso como referencia jurídica. Para consultas normativas, acude siempre al texto oficial del Reglamento.
+</Note>
+
+<Note>
+  Combina el glosario con las [Flashcards](/modules/flashcards) para fijar el vocabulario: lee la definición en el glosario y luego practica el término en las tarjetas de memoria.
+</Note>

@@ -1,0 +1,70 @@
+---
+title: 'Quiz interactivo: pon a prueba el AI Act'
+description: 'Pon a prueba tu comprensión del Reglamento de IA con preguntas de opción múltiple, retroalimentación inmediata y puntuación final.'
+
+---
+
+El módulo de quiz permite comprobar cuánto has asimilado de cada guía mediante preguntas de opción múltiple con retroalimentación inmediata. Tras seleccionar una respuesta y confirmarla, la plataforma resalta en verde la opción correcta y en rojo la incorrecta (si has fallado), de modo que puedes aprender del error en el momento. Al finalizar todas las preguntas se muestra una puntuación porcentual: si superas el 70 % de aciertos, se desbloquea un token de finalización exclusivo de esa guía.
+
+## Cómo acceder al quiz
+
+<Steps>
+  <Step title="Abre una guía">
+    Desde la página de inicio, selecciona la guía que quieres evaluar. Puedes ver el listado completo en [Guías: visión general](/guides/overview).
+  </Step>
+  <Step title="Haz clic en la pestaña «Quiz»">
+    En la barra de pestañas del módulo de guía, selecciona **Quiz**. Si la guía aún no tiene preguntas definidas, se mostrará un aviso informativo.
+  </Step>
+  <Step title="Lee la pregunta">
+    Se presenta una pregunta y cuatro opciones de respuesta. Lee todas las opciones antes de elegir.
+  </Step>
+  <Step title="Selecciona una respuesta">
+    Haz clic en la opción que consideres correcta. La opción seleccionada se resaltará en azul índigo.
+  </Step>
+  <Step title="Confirma con «Comprobar»">
+    Pulsa el botón **Comprobar** para validar tu respuesta. La opción correcta se mostrará en verde y, si has fallado, tu elección aparecerá en rojo.
+  </Step>
+  <Step title="Avanza a la siguiente pregunta">
+    Pulsa **Siguiente** para continuar. Tras la última pregunta, el botón cambia a **Ver resultados**.
+  </Step>
+  <Step title="Revisa tu puntuación final">
+    La pantalla de resultados muestra el porcentaje de aciertos y el número de respuestas correctas sobre el total. Si alcanzas el 70 % o más, se desbloquea tu token de finalización.
+  </Step>
+</Steps>
+
+## Estructura de datos de una pregunta
+
+Cada pregunta sigue la interfaz `QuizQuestion` definida en `lib/data/es.ts`:
+
+```typescript
+export interface QuizQuestion {
+  question: string;      // Enunciado de la pregunta
+  options: string[];     // Array con las 4 opciones de respuesta
+  correctAnswer: number; // Índice (0-3) de la opción correcta dentro de options[]
+}
+```
+
+Cada guía contiene su propio array `quiz: QuizQuestion[]`. El componente `QuizModule` recibe ese array, gestiona el estado de respuesta y calcula la puntuación final de forma interna.
+
+## Organización de las preguntas por guía
+
+Las preguntas están agrupadas por guía y cubren los conceptos más relevantes de cada área del Reglamento. Puedes repetir el quiz tantas veces como quieras pulsando el botón **Reintentar** en la pantalla de resultados.
+
+<CardGroup cols={2}>
+  <Card title="Guía práctica" icon="book-open" href="/guides/guia-practica">
+    Quiz sobre aplicación práctica del Reglamento de IA.
+  </Card>
+  <Card title="Evaluación de conformidad" icon="clipboard-check" href="/guides/evaluacion-conformidad">
+    Preguntas sobre procedimientos y criterios de conformidad.
+  </Card>
+  <Card title="Supervisión humana" icon="user-shield" href="/guides/supervision-humana">
+    Quiz sobre requisitos de supervisión y control humano.
+  </Card>
+  <Card title="Notificación de incidentes" icon="bell" href="/guides/notificacion-incidentes">
+    Preguntas sobre obligaciones de reporte e incidentes graves.
+  </Card>
+</CardGroup>
+
+<Note>
+  Si un quiz no está disponible para una guía concreta, la plataforma lo indica con un mensaje y un enlace para volver al contenido de la guía.
+</Note>

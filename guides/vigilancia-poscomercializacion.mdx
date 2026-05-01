@@ -1,0 +1,96 @@
+---
+title: 'Guía 13: Plan de vigilancia poscomercialización para IA'
+description: 'Artículo 72: plan de vigilancia poscomercialización para IA, cuatro componentes, cinco pasos de implementación e indicadores de seguimiento continuo.'
+---
+
+La **Guía 13 de la AESIA** aborda la obligación establecida en el artículo 72 del Reglamento Europeo de Inteligencia Artificial: implementar un plan de vigilancia poscomercialización para sistemas de IA de alto riesgo. Comercializar un sistema no es el final del proceso de cumplimiento, sino el comienzo de una fase de seguimiento activo y sistemático que dura toda la vida útil del sistema.
+
+## Qué cubre esta guía
+
+Esta guía explica qué es el plan de vigilancia poscomercialización, cuáles son sus cuatro componentes principales, cómo implementarlo en cinco pasos, qué indicadores deben monitorizarse y cómo se articula con el resto de las obligaciones del Reglamento, especialmente con la gestión de riesgos y los registros automáticos.
+
+<Note>
+El artículo 72 del Reglamento obliga a los proveedores de sistemas de IA de alto riesgo a implementar un plan de vigilancia poscomercialización que recoja y evalúe de forma continua la experiencia operativa obtenida tras la introducción del sistema en el mercado.
+</Note>
+
+## Conceptos clave
+
+### Los cuatro componentes del sistema de vigilancia
+
+El sistema de vigilancia poscomercialización se concibe integrado en cuatro componentes que trabajan de forma coordinada:
+
+1. **Sistemas de captación de indicadores:** Procesos automáticos dedicados a recopilar datos brutos sobre el rendimiento del modelo, la infraestructura e interacciones.
+2. **Sistemas de registro de indicadores:** Servicios de almacenamiento que guardan de forma segura, estructurada y trazable la información recabada.
+3. **Sistema de alertas automatizadas:** Monitorea en tiempo real los cambios en los indicadores frente a umbrales preestablecidos y emite avisos ante desviaciones.
+4. **Interfaces de análisis:** Dotan a los responsables de supervisión humana de acceso visual (cuadros de mando) para investigar incidentes y gestionar las intervenciones.
+
+### Cinco pasos de implementación
+
+<Steps>
+  <Step title="Selección de indicadores">
+    El proveedor establece las métricas más relevantes basadas en la gestión de riesgos diseñada: rendimiento algorítmico, ciberseguridad, infraestructura e interacciones de usuario.
+  </Step>
+  <Step title="Despliegue del sistema de captación">
+    Configurar el sistema de IA para que envíe los datos de interés (archivos log) de forma estable y sin interferir con la latencia del servicio.
+  </Step>
+  <Step title="Configuración de la base de datos">
+    Establecer un sistema de registro robusto que garantice integridad, políticas de control de acceso, retención y eliminación segura de los datos recabados.
+  </Step>
+  <Step title="Desarrollo de alertas e interfaz de análisis">
+    Diseñar herramientas en tiempo real que comparen datos con umbrales, y paneles visuales para que los equipos de supervisión puedan responder a las alertas.
+  </Step>
+  <Step title="Pruebas y validación">
+    Garantizar de forma fiable que la recolección de datos y las alertas funcionan correctamente, apoyándose en auditorías independientes.
+  </Step>
+</Steps>
+
+### Indicadores de vigilancia
+
+Los indicadores se dividen en cuatro categorías de seguimiento:
+
+- **Del sistema inteligente:** Volumen de inferencias, tasas de predicción (accuracy), F1-score, recall, latencia.
+- **De infraestructura:** Monitoreo de hardware, temperatura, RAM y procesos de CPU disponibles.
+- **De acciones del entorno:** Volumetrías y ubicaciones anómalas por simultaneidad u orígenes improcedentes.
+- **De seguridad:** Uso de credenciales defectuosas, intrusiones y alteraciones detectadas en directorios internos.
+
+### Pruebas activas y capacitación del personal
+
+El plan exige pruebas dinámicas periódicas: pruebas de estrés (cargas de volumen intensivo), pruebas de precisión (verificación empírica mantenida) y pruebas de robustez y ciberseguridad. El personal responsable debe recibir capacitación exhaustiva para interpretar las métricas y alertas, conocer el protocolo de actuación ante comportamientos anómalos y generar informes transparentes para afectados y administraciones.
+
+## Términos de referencia
+
+<AccordionGroup>
+  <Accordion title="Plan de vigilancia poscomercialización">
+    Conjunto de actividades para recolectar y evaluar de forma continua la experiencia obtenida de sistemas de IA de alto riesgo tras su puesta en el mercado, con el objetivo de identificar la necesidad de acciones correctivas.
+  </Accordion>
+  <Accordion title="Sistema de alertas automatizadas">
+    Mecanismo informático que monitorea los indicadores en tiempo real y envía notificaciones cuando los valores superan los umbrales críticos de normalidad preestablecidos.
+  </Accordion>
+  <Accordion title="Pruebas de estrés">
+    Evaluaciones técnicas en las que se somete al sistema de IA a condiciones extremas de carga o volumen de datos para comprobar su estabilidad, disponibilidad y respuesta frente a fallos.
+  </Accordion>
+  <Accordion title="Latencia del sistema">
+    Tiempo de respuesta del sistema de IA, medido desde que recibe una petición o dato de entrada hasta que emite el resultado o predicción.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+El plan de vigilancia está estrechamente vinculado con la Guía de Gestión de Riesgos (qué indicadores diseñar) y la Guía de Registros (cómo almacenarlos). Al estudiar la Guía 13, revisa también las Guías 05 y 12 para entender el ecosistema completo.
+</Tip>
+
+## Módulos de aprendizaje
+
+<CardGroup cols={2}>
+  <Card title="Flashcards de vigilancia" icon="rectangle-history" href="/modules/flashcards">
+    Repasa los cuatro componentes del sistema de vigilancia, los cinco pasos de implementación y las categorías de indicadores.
+  </Card>
+  <Card title="Quiz interactivo" icon="circle-question" href="/modules/quiz">
+    Pon a prueba tu conocimiento sobre el artículo 72, las pruebas de estrés y la relación con otras obligaciones del Reglamento.
+  </Card>
+  <Card title="Glosario de vigilancia" icon="book" href="/modules/glossary">
+    Consulta las definiciones de vigilancia poscomercialización, indicador, tasa de errores de predicción, recall y plan de contingencia.
+  </Card>
+  <Card title="Guía relacionada: registros" icon="file-text" href="/guides/registros">
+    Los registros automáticos de la Guía 12 son la infraestructura sobre la que se apoya el sistema de vigilancia de la Guía 13.
+  </Card>
+</CardGroup>

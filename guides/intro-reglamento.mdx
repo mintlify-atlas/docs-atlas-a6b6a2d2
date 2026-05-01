@@ -1,0 +1,137 @@
+---
+title: 'Guía 01: Introducción al Reglamento Europeo de IA'
+description: 'Visión general del AI Act: niveles de riesgo, actores clave, obligaciones para sistemas de alto riesgo y calendario de cumplimiento desde febrero de 2025.'
+---
+
+La **Guía 01 de la AESIA** ofrece una introducción estructurada al Reglamento Europeo de Inteligencia Artificial, explicando su alcance normativo, los distintos niveles de riesgo, los roles de los operadores y las obligaciones concretas que deben cumplir los proveedores de sistemas de IA de alto riesgo antes de su comercialización. Es el punto de partida recomendado para cualquier organización que quiera comprender qué les exige el AI Act y cómo prepararse para cumplirlo.
+
+<Note>
+  Esta guía es un recurso educativo basado en las guías técnicas oficiales de la AESIA. No tiene carácter vinculante ni sustituye a la normativa legal. La información oficial y vinculante se encuentra exclusivamente en los documentos originales publicados por la AESIA y en el texto del Reglamento (UE) 2024/1689.
+</Note>
+
+## ¿Qué es el Reglamento de IA?
+
+El Reglamento Europeo de IA (AI Act) establece un marco normativo horizontal para la inteligencia artificial en la Unión Europea. Se apoya en dos pilares estratégicos:
+
+- **Excelencia:** fomento de la inversión y la innovación en IA.
+- **Confianza:** garantía de seguridad y respeto a los derechos fundamentales.
+
+El Reglamento **no se aplica** a sistemas utilizados exclusivamente para fines militares o de defensa, investigación científica precomercial, software de código abierto (salvo que sean de alto riesgo o tengan obligaciones de transparencia), ni a uso personal no profesional por personas físicas.
+
+## Niveles de riesgo
+
+El AI Act clasifica los sistemas de IA en cuatro categorías según el riesgo que presentan para los derechos fundamentales, la salud y la seguridad.
+
+<AccordionGroup>
+  <Accordion title="Riesgo inaceptable — Sistemas prohibidos">
+    Son sistemas cuyo uso está expresamente prohibido porque vulneran derechos fundamentales o la dignidad humana. Entre ellos:
+
+    - Manipulación del comportamiento cognitivo para eludir el libre albedrío.
+    - Puntuación social (*social scoring*) por parte de autoridades públicas.
+    - Categorización biométrica basada en características sensibles (ideología, religión, orientación sexual).
+    - Identificación biométrica remota en tiempo real en espacios públicos, salvo excepciones policiales estrictamente tasadas.
+  </Accordion>
+  <Accordion title="Alto riesgo — Permitidos con obligaciones estrictas">
+    Son sistemas permitidos pero sujetos a requisitos exhaustivos antes de entrar al mercado. Se dividen en dos grupos:
+
+    **Anexo I — Componentes de seguridad en productos regulados:**
+    - Juguetes, ascensores, dispositivos médicos, maquinaria agrícola.
+
+    **Anexo III — Sistemas en áreas de especial sensibilidad:**
+    - Biometría e identificación de personas.
+    - Infraestructuras críticas (energía, agua, transporte).
+    - Educación y formación profesional.
+    - Empleo y gestión de recursos humanos.
+    - Servicios públicos esenciales y prestaciones sociales.
+    - Control fronterizo y migración.
+    - Administración de justicia.
+  </Accordion>
+  <Accordion title="Riesgo limitado — Obligaciones de transparencia">
+    Sistemas con riesgo de manipulación o engaño hacia el usuario. Su obligación principal es **informar** de que se está interactuando con una IA:
+
+    - **Chatbots:** el usuario debe saber que está hablando con una máquina.
+    - **Deepfakes:** el contenido de audio, imagen o vídeo generado artificialmente debe etiquetarse como tal.
+    - **Reconocimiento de emociones:** las personas expuestas deben ser informadas.
+  </Accordion>
+  <Accordion title="Riesgo mínimo — Uso libre">
+    Engloba la inmensa mayoría de los sistemas de IA actuales: filtros de spam, motores de recomendación de contenido, videojuegos con IA, etc. No tienen obligaciones adicionales más allá de la normativa general, aunque se fomenta la adhesión voluntaria a códigos de conducta.
+  </Accordion>
+</AccordionGroup>
+
+## Actores clave del Reglamento
+
+El AI Act impone obligaciones distintas según el papel que cada entidad desempeña en la cadena de valor de un sistema de IA.
+
+| Actor | Definición | Obligaciones principales |
+|---|---|---|
+| **Proveedor** | Quien desarrolla el sistema y lo introduce en el mercado bajo su nombre o marca | Las más exigentes: gestión de riesgos, documentación técnica, evaluación de conformidad, marcado CE |
+| **Responsable del despliegue** | Quien utiliza el sistema bajo su autoridad en el ejercicio de una actividad profesional | Supervisión humana, conservación de logs, notificación de incidentes graves |
+| **Importador** | Entidad establecida en la UE que introduce en el mercado un sistema de un proveedor de un tercer país | Verifica que el proveedor externo cumple el Reglamento |
+| **Distribuidor** | Quien comercializa el sistema en el mercado de la UE sin ser proveedor ni importador | Comprueba que el sistema lleva el marcado CE y la documentación requerida |
+
+<Tip>
+  Un responsable del despliegue asume las obligaciones del proveedor si realiza una **modificación sustancial** del sistema de IA que afecte a su conformidad con el Reglamento.
+</Tip>
+
+## Obligaciones para sistemas de alto riesgo
+
+Los proveedores de sistemas de alto riesgo deben cumplir un ciclo de vida normativo estricto antes de comercializarlos.
+
+<Steps>
+  <Step title="Sistema de gestión de riesgos (Art. 9)">
+    Identificar, analizar, evaluar y mitigar los riesgos del sistema durante toda su vida útil, con revisión continua post-comercialización.
+  </Step>
+  <Step title="Gobernanza de datos (Art. 10)">
+    Garantizar que los datos de entrenamiento, validación y prueba sean de calidad, pertinentes, representativos y libres de sesgos que puedan generar discriminación.
+  </Step>
+  <Step title="Documentación técnica (Art. 11)">
+    Elaborar documentación detallada que demuestre la conformidad del sistema con todos los requisitos del Reglamento.
+  </Step>
+  <Step title="Registro automático de eventos — logs (Art. 12)">
+    El sistema debe ser capaz de registrar automáticamente los eventos relevantes para garantizar la trazabilidad y facilitar la detección de fallos post-comercialización.
+  </Step>
+  <Step title="Transparencia e información (Art. 13)">
+    Proporcionar instrucciones de uso claras e interpretables que permitan al responsable del despliegue comprender las capacidades, limitaciones y condiciones de uso del sistema.
+  </Step>
+  <Step title="Supervisión humana (Art. 14)">
+    Incorporar herramientas técnicas y operativas que permitan a una persona física supervisar, comprender e intervenir en el funcionamiento del sistema.
+  </Step>
+  <Step title="Precisión, solidez y ciberseguridad (Art. 15)">
+    El sistema debe mantener sus especificaciones de rendimiento, ser resiliente frente a fallos y ataques, y contar con medidas de ciberseguridad adecuadas.
+  </Step>
+  <Step title="Evaluación de conformidad (Art. 43)">
+    Verificar el cumplimiento de todos los requisitos anteriores antes de la puesta en mercado, mediante control interno o con la participación de un organismo notificado.
+  </Step>
+</Steps>
+
+## Calendario de cumplimiento
+
+Los plazos de aplicación del AI Act se escalonan desde su entrada en vigor en agosto de 2024.
+
+| Fecha | Hito |
+|---|---|
+| **2 de agosto de 2024** | Entrada en vigor del Reglamento |
+| **2 de febrero de 2025** | Aplicación de las prohibiciones de prácticas de riesgo inaceptable (6 meses) |
+| **2 de agosto de 2025** | Aplicación de las obligaciones para modelos de IA de uso general — GPAI (12 meses) |
+| **2 de agosto de 2026** | Aplicación plena para sistemas de alto riesgo del Anexo III (24 meses) |
+| **2 de agosto de 2027** | Aplicación para sistemas de alto riesgo del Anexo I — productos regulados (36 meses) |
+
+## El papel de la AESIA
+
+La **Agencia Española de Supervisión de la Inteligencia Artificial** actúa como autoridad nacional de vigilancia del mercado y punto de contacto único ante la Comisión Europea. Entre sus funciones:
+
+- Supervisar el cumplimiento del Reglamento por parte de los operadores en España.
+- Gestionar el piloto español de *sandbox* regulatorio de IA.
+- Coordinar con otras autoridades sectoriales (AEPD, Banco de España, etc.) para sistemas que dependen de regulación específica.
+- Publicar guías técnicas de apoyo al cumplimiento normativo.
+
+## Practica lo aprendido
+
+<CardGroup cols={2}>
+  <Card title="Flashcards — Guía 01" icon="rectangle-history" href="/modules/flashcards">
+    Repasa los conceptos clave de esta guía: niveles de riesgo, actores, obligaciones y plazos, con tarjetas interactivas de doble cara.
+  </Card>
+  <Card title="Quiz — Guía 01" icon="circle-question" href="/modules/quiz">
+    Pon a prueba tu comprensión del Reglamento con preguntas de opción múltiple y retroalimentación inmediata.
+  </Card>
+</CardGroup>

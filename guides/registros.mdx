@@ -1,0 +1,79 @@
+---
+title: 'Guía 12: Registros y archivos de registro en sistemas de IA'
+description: 'Artículo 12: generación automática de logs, principios de integridad y autenticidad, conservación mínima de seis meses y responsabilidades del proveedor.'
+---
+
+La **Guía 12 de la AESIA** detalla las obligaciones establecidas en el artículo 12 del Reglamento Europeo de Inteligencia Artificial respecto a la capacidad de los sistemas de alto riesgo para generar registros automáticos (*logs*). Sin una gestión rigurosa de registros, no es posible garantizar la trazabilidad del sistema, demostrar su conformidad ante una auditoría ni detectar a tiempo situaciones de riesgo durante su vida útil.
+
+## Qué cubre esta guía
+
+Esta guía explica qué es un registro en el contexto de la IA, qué principios debe cumplir el sistema de gestión de registros, qué elementos mínimos deben registrarse, cómo deben almacenarse y protegerse, durante cuánto tiempo deben conservarse y cuáles son las responsabilidades compartidas entre proveedores y responsables del despliegue.
+
+<Note>
+El artículo 12 del Reglamento establece que los sistemas de IA de alto riesgo deben incorporar las capacidades técnicas necesarias para la generación automática de registros de eventos durante todo su ciclo de vida. Los sistemas de identificación biométrica remota tienen exigencias aún más estrictas.
+</Note>
+
+## Conceptos clave
+
+### Principios fundamentales de los registros
+
+Un registro es un archivo que almacena información crítica sobre el comportamiento y las decisiones del sistema (durante el entrenamiento, la validación y la producción). El sistema de gestión de registros es el conjunto estructurado de procesos para recopilar, almacenar, analizar, proteger y gestionar estos archivos. Debe cumplir cuatro principios:
+
+1. **Autenticidad:** El registro es lo que afirma ser y ha sido generado por el proceso autorizado.
+2. **Fiabilidad:** El contenido es una representación exacta y completa de las operaciones documentadas.
+3. **Integridad:** Los registros están protegidos contra modificación o eliminación no autorizada.
+4. **Usabilidad:** Son fácilmente localizables, recuperables y comprensibles para auditorías.
+
+### Marco regulatorio: artículos 12 y 19
+
+El **artículo 12** obliga a diseñar sistemas con capacidades técnicas que permitan la generación automática de registros de eventos e interacciones en todo el ciclo de vida. Para los **sistemas de identificación biométrica remota**, los registros deben incluir obligatoriamente el registro temporal exacto (fecha y hora), la base de datos de referencia concreta cotejada, los datos de entrada que arrojan coincidencia y la identificación de las personas físicas implicadas en la validación.
+
+El **artículo 19** obliga a los proveedores y, en ciertos casos, a los responsables del despliegue, a conservar los registros automáticamente generados durante al menos **seis meses**, salvo normativas sectoriales que dispongan un plazo diferente.
+
+### Captura, almacenamiento y control de acceso
+
+La arquitectura de almacenamiento (en la nube o *on-premise*) debe garantizar copias de seguridad, redundancia y cifrado en reposo. La captura debe ser ininterrumpida y no debe afectar al rendimiento del sistema. El control de acceso se implementa mediante gestión de identidades (IAM/RBAC) con el principio de mínimo privilegio. El historial de auditoría no puede ser alterado: protege su autenticidad como evidencia legal.
+
+### Retención, disposición y mejora continua
+
+Superado el período de retención legal, los registros que contengan datos personales o de categorías especiales deben destruirse de forma segura o anonimizarse bajo los principios del RGPD. El sistema requiere auditorías periódicas para verificar que las herramientas de registro funcionan correctamente y que los controles de seguridad no han sido vulnerados.
+
+Todos los procedimientos y políticas relativas a los registros deben reflejarse en la **documentación técnica** del Anexo IV, e incorporarse en los manuales de instrucciones para que el responsable del despliegue sepa cómo gestionarlos e interpretarlos.
+
+## Términos de referencia
+
+<AccordionGroup>
+  <Accordion title="Registro (en un sistema de IA)">
+    Archivo que almacena información sobre el comportamiento y desempeño del sistema durante su entrenamiento o uso en producción.
+  </Accordion>
+  <Accordion title="Artículo 12 del Reglamento de IA">
+    Establece que los sistemas de IA de alto riesgo deberán incorporar las capacidades técnicas necesarias para la generación automática de registros de eventos e interacciones.
+  </Accordion>
+  <Accordion title="Artículo 19 del Reglamento de IA">
+    Obliga a los proveedores de sistemas de IA a conservar los archivos de registro generados automáticamente que estén bajo su control, con un periodo mínimo de seis meses.
+  </Accordion>
+  <Accordion title="Disposición">
+    Gama de procesos asociados con la retención, destrucción o transferencia de los registros, documentados en las autoridades de disposición correspondientes.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+El quiz de la Guía 12 pone especial énfasis en los plazos de conservación, las exigencias especiales para sistemas biométricos y quién es responsable de conservar los registros. Memoriza estos tres puntos y habrás cubierto la mayoría de las preguntas.
+</Tip>
+
+## Módulos de aprendizaje
+
+<CardGroup cols={2}>
+  <Card title="Flashcards de registros" icon="rectangle-history" href="/modules/flashcards">
+    Repasa los principios de autenticidad, fiabilidad, integridad y usabilidad, y los artículos 12 y 19 del Reglamento.
+  </Card>
+  <Card title="Quiz interactivo" icon="circle-question" href="/modules/quiz">
+    Pon a prueba tu conocimiento sobre plazos de conservación, sistemas biométricos y responsabilidades compartidas.
+  </Card>
+  <Card title="Glosario de registros" icon="book" href="/modules/glossary">
+    Consulta las definiciones de registro, disposición, migración, gestión de registros y otros términos del glosario oficial de la Guía 12.
+  </Card>
+  <Card title="Guía relacionada: vigilancia poscomercialización" icon="eye" href="/guides/vigilancia-poscomercializacion">
+    Los registros son la fuente principal de datos para el plan de vigilancia poscomercialización de la Guía 13.
+  </Card>
+</CardGroup>

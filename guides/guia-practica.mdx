@@ -1,0 +1,147 @@
+---
+title: 'Guía 02: Ejemplos prácticos del Reglamento de IA'
+description: 'Enfoque práctico del AI Act con ejemplos reales de sistemas de IA de alto riesgo en distintos sectores, definiciones clave y roles de los operadores.'
+---
+
+La **Guía 02 de la AESIA** aborda el Reglamento Europeo de Inteligencia Artificial desde un enfoque eminentemente práctico y didáctico. Utilizando cinco casos de uso representativos como hilo conductor, esta guía ayuda a pymes, startups y organizaciones a comprender qué significa en la práctica que un sistema sea de alto riesgo, qué obligaciones conlleva y cómo se aplican las definiciones legales del Reglamento a situaciones concretas del mundo real. Constituye además el puente entre las guías introductorias y el catálogo de guías técnicas especializadas.
+
+<Note>
+  Esta guía es un recurso educativo basado en las guías técnicas oficiales de la AESIA. No tiene carácter vinculante ni sustituye a la normativa legal. La información oficial se encuentra en los documentos originales publicados por la AESIA y en el texto del Reglamento (UE) 2024/1689.
+</Note>
+
+## Contexto: el piloto español de Sandbox de IA
+
+La Guía 02 se desarrolla en el marco del **piloto español de *sandbox* regulatorio de IA**, un entorno de pruebas controlado impulsado por la Secretaría de Estado de Digitalización e Inteligencia Artificial (SEDIA) con el respaldo de la Comisión Europea. Su objetivo es validar la documentación de apoyo al cumplimiento y facilitar la transferencia de conocimiento regulatorio a las organizaciones que desarrollan sistemas de IA.
+
+Los cinco casos de uso de esta guía se han seleccionado para ilustrar de forma transversal cómo se aplican los requisitos técnicos de las guías especializadas (ciberseguridad, precisión, solidez, datos, etc.) a situaciones reales.
+
+## Cinco ejemplos de sistemas de IA de alto riesgo
+
+<AccordionGroup>
+  <Accordion title="1. Identificación biométrica en el trabajo (Anexo III, apartado 1)">
+    Sistema de control de asistencia de empleados mediante reconocimiento biométrico (facial, dactilar o similar).
+
+    - **Clasificación:** Alto riesgo — Anexo III, apartado 1 (biometría).
+    - **Riesgos principales:** Privacidad, tratamiento de datos sensibles, derechos fundamentales de los trabajadores.
+    - **Evaluación de conformidad:** Requiere la intervención de un **organismo notificado** independiente, dado que se trata de identificación biométrica remota.
+    - **Autoridad de vigilancia en España:** AEPD y/o AESIA.
+  </Accordion>
+  <Accordion title="2. Gestión de personal y promociones (Anexo III, apartado 4)">
+    Sistema que evalúa el rendimiento histórico y actual de los trabajadores y recomienda ascensos o asignación de tareas.
+
+    - **Clasificación:** Alto riesgo — Anexo III, apartado 4 (empleo y gestión de recursos humanos).
+    - **Riesgos principales:** Influencia determinante en retribuciones, carreras y relaciones laborales; riesgo de sesgo algorítmico.
+    - **Obligaciones destacadas:** Gobernanza de datos representativos y sin sesgos, supervisión humana efectiva, transparencia hacia los trabajadores afectados.
+  </Accordion>
+  <Accordion title="3. Predicción de riesgo de exclusión social (Anexo III, apartado 5)">
+    Sistema utilizado por administraciones públicas para determinar la admisibilidad de ciudadanos a ayudas económicas o servicios públicos esenciales.
+
+    - **Clasificación:** Alto riesgo — Anexo III, apartado 5 (acceso a servicios públicos y privados esenciales).
+    - **Riesgos principales:** Impacto directo sobre poblaciones vulnerables; riesgo de discriminación sistémica.
+    - **Obligaciones destacadas:** Datos de calidad y libres de sesgos, explicabilidad de las decisiones, derecho de recurso humano para las personas afectadas.
+  </Accordion>
+  <Accordion title="4. Bomba de insulina inteligente (Anexo I — productos sanitarios)">
+    Dispositivo médico que analiza continuamente la glucosa en sangre y administra insulina de forma automática.
+
+    - **Clasificación:** Alto riesgo — Anexo I (componente de seguridad en producto sanitario regulado).
+    - **Riesgos principales:** Fallo técnico con consecuencias críticas directas sobre la salud o la vida del paciente.
+    - **Evaluación de conformidad:** Integrada en la legislación de armonización de productos sanitarios (Marcado CE).
+    - **Autoridad de vigilancia en España:** AEMPS (sectorial).
+  </Accordion>
+  <Accordion title="5. Detección de denuncias falsas (Anexo III, apartado 6)">
+    Sistema que ayuda a las fuerzas de seguridad a evaluar matemáticamente la fiabilidad de pruebas y transcripciones policiales.
+
+    - **Clasificación:** Alto riesgo — Anexo III, apartado 6 (control fronterizo, aplicación de la ley).
+    - **Riesgos principales:** Impacto sobre derechos fundamentales, libertad y tutela judicial efectiva.
+    - **Obligaciones destacadas:** Supervisión humana reforzada, trazabilidad de las decisiones mediante logs, documentación técnica exhaustiva.
+  </Accordion>
+</AccordionGroup>
+
+## Cómo determinar si un sistema entra en el ámbito del Reglamento
+
+Para evaluar si un sistema de IA está sujeto al AI Act, es necesario responder tres preguntas en secuencia:
+
+<Steps>
+  <Step title="¿Es un sistema de IA según la definición legal?">
+    El Reglamento define un **sistema de IA** como un sistema basado en máquinas, diseñado para funcionar con distintos niveles de autonomía, que infiere de la información de entrada cómo generar resultados (predicciones, recomendaciones, decisiones) que influyen en entornos físicos o virtuales.
+
+    El software determinístico que sigue reglas fijas explícitas sin inferencia ni aprendizaje queda fuera de esta definición.
+  </Step>
+  <Step title="¿Se comercializa o despliega en el mercado de la UE?">
+    El Reglamento se aplica a los proveedores que introduzcan sistemas en el mercado de la Unión o que los pongan en servicio en ella, independientemente de dónde estén establecidos. También aplica a los responsables del despliegue establecidos en la UE.
+  </Step>
+  <Step title="¿Cuál es su finalidad prevista y nivel de riesgo?">
+    La **finalidad prevista** —el uso específico para el que el proveedor diseñó el sistema— determina en qué categoría de riesgo se encuadra. Un mismo modelo base puede ser de riesgo mínimo en un uso y de alto riesgo en otro, según para qué se comercialice.
+  </Step>
+</Steps>
+
+## Definiciones clave del Artículo 3
+
+El dominio de las definiciones legales del Reglamento es esencial para interpretar correctamente las obligaciones. Estas son algunas de las más relevantes de la Guía 02:
+
+<Tabs>
+  <Tab title="Sistema y datos">
+    | Término | Definición |
+    |---|---|
+    | **Sistema de IA** | Sistema basado en máquinas diseñado para funcionar con autonomía, que infiere de entradas cómo generar predicciones, recomendaciones o decisiones. |
+    | **Finalidad prevista** | Uso específico para el que el proveedor concibe el sistema, según la información facilitada en las instrucciones de uso. |
+    | **Datos de entrenamiento** | Datos usados para ajustar los parámetros entrenables del modelo durante su desarrollo. |
+    | **Datos de validación** | Datos empleados durante el desarrollo para evaluar el modelo y ajustar sus hiperparámetros. |
+    | **Datos de prueba** | Datos independientes usados para la evaluación final del rendimiento antes de la comercialización. |
+  </Tab>
+  <Tab title="Comercialización">
+    | Término | Definición |
+    |---|---|
+    | **Introducción en el mercado** | Primera comercialización de un sistema de IA en el mercado de la UE. |
+    | **Comercialización** | Todo suministro posterior de un sistema para su distribución o uso en la UE, a título oneroso o gratuito. |
+    | **Componente de seguridad** | Elemento cuyo fallo originaría un peligro inminente para la salud, la integridad física o los bienes de las personas. |
+  </Tab>
+  <Tab title="Modelos avanzados">
+    | Término | Definición |
+    |---|---|
+    | **Ultrasuplantación (Deepfake)** | Contenido de imagen, audio o vídeo generado o manipulado que se asemeja a eventos o personas reales induciendo a engaño. Requiere etiquetado obligatorio. |
+    | **Modelo GPAI** | Modelo de IA de propósito general entrenado con grandes volúmenes de datos, capaz de realizar múltiples tareas distintas (p. ej. LLaMA, GPT-4). |
+    | **Riesgo sistémico** | Clasificación para modelos GPAI cuyo coste computacional de entrenamiento supera los **10^25 FLOPs**, asociada a impactos potenciales graves a gran escala. |
+  </Tab>
+</Tabs>
+
+## Roles en la cadena de valor
+
+El Reglamento impone obligaciones distintas según el papel que cada entidad desempeña en el ciclo de vida del sistema.
+
+| Rol | Responsabilidades principales |
+|---|---|
+| **Proveedor** | Soporta las cargas regulatorias más exigentes: documentación técnica, gobernanza de datos, gestión de riesgos, ciberseguridad, precisión, solidez y evaluación de conformidad. |
+| **Responsable del despliegue** | Debe asegurar la supervisión humana efectiva, conservar diligentemente los archivos de logs y notificar de forma inmediata cualquier incidente grave. |
+
+<Tip>
+  Si el responsable del despliegue modifica sustancialmente el sistema, asume automáticamente las obligaciones del proveedor y debe iniciar un nuevo proceso de evaluación de conformidad.
+</Tip>
+
+## Practica lo aprendido
+
+<CardGroup cols={2}>
+  <Card title="Flashcards — Guía 02" icon="rectangle-history" href="/modules/flashcards">
+    Repasa los conceptos clave: definiciones legales, tipos de datos, deepfakes, modelos GPAI y riesgo sistémico.
+  </Card>
+  <Card title="Quiz — Guía 02" icon="circle-question" href="/modules/quiz">
+    Pon a prueba tu comprensión con preguntas sobre los cinco casos de uso y las definiciones del Artículo 3.
+  </Card>
+</CardGroup>
+
+## Continúa con las guías técnicas
+
+<CardGroup cols={2}>
+  <Card title="Evaluación de conformidad" icon="shield-check" href="/guides/evaluacion-conformidad">
+    Guía 03: cómo demostrar que un sistema de IA de alto riesgo cumple los requisitos del Reglamento y obtener el marcado CE.
+  </Card>
+  <Card title="Gestión de riesgos" icon="triangle-alert" href="/guides/gestion-riesgos">
+    Guía 05: identificación, análisis y mitigación de riesgos a lo largo de todo el ciclo de vida del sistema.
+  </Card>
+  <Card title="Supervisión humana" icon="eye" href="/guides/supervision-humana">
+    Guía 06: requisitos para garantizar que las personas puedan supervisar e intervenir en los sistemas de IA.
+  </Card>
+  <Card title="Ver todas las guías" icon="list" href="/guides/overview">
+    Accede al índice completo de las 16 guías técnicas de la AESIA.
+  </Card>
+</CardGroup>
